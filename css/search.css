@@ -79,7 +79,9 @@ body {
 
 @media (max-width: 768px) {
     .search-feature-container {
-        display: block;
+        display: flex;
+        flex-direction: column;
+        flex-direction: column-reverse;
     }
 
     .search-card {
