@@ -80,7 +80,6 @@ body {
 @media (max-width: 768px) {
     .search-feature-container {
         display: flex;
-        flex-direction: column;
         flex-direction: column-reverse;
     }
 
