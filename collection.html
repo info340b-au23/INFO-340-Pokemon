@@ -4,46 +4,181 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="author" content="Noor Aamir, Ling (Evelyn) Lin, Jessie Ren, Amber Shi">
+    <meta name="author" content="Noor Aamir, Ling (Evelyn) Lin, Jessie Ren, Yi Shi">
     <meta name="description" content="Group Pokemon Project Proposal">
-    <!-- <link rel="stylesheet" href="css/proposal.css"> -->
-    <title>Project Proposal</title>
+    <link rel="stylesheet" href="css/collection.css">
+    <title>Project Draft 1: Collection Main Page</title>
 </head>
 
 <body>
-    <header>
-        <h1>My collection</h1>
-    </header>
+    <main>
+        <!-- Contains whole main part. -->
+        <div class="collection-main-container">
+            <header>
+                <h1>My Collection</h1>
+            </header>
 
-    <section>
-        <button>Add Pokémon</button>
-    </section>
+            <section>
+                <div class="button-container">
+                    <h2>Feature Navigation</h2>
+                    <form>
+                        <a href="Search.html" class="button-link">Search</a>
+                        <button type="button">Cooking Simulator</button>
+                    </form>
+                </div>
+            </section>
 
-    <section>
-        <img src="images/pokemon/001.png" alt="First Pokemon Pic, click to see detailed info">
-    </section>
+            <!-- Conains cards and filters to make cards lay left and filters lay right. -->
+            <div class="current-collection-container">
+                <!-- Click to add Pokémon to collection. -->
+                <section>
+                    <button>Add Pokémon</button>
+                </section>
 
-    <section>
-        <img src="images/pokemon/004.png" alt="Second Pokemon, click to see detailed info">
-    </section>
+                <!-- Contains all cards. -->
+                <div class="collection-cards-container">
+                    <!-- Eevee -->
+                    <div class="collection-card">
+                        <img src="img/Eevee.jpg" alt="Eevee">
+                        <p>Eevee</p>
+                    </div>
+                    <!-- Espeon -->
+                    <div class="collection-card">
+                        <img src="img/Espeon.jpg" alt="Espeon">
+                        <p>Espeaon</p>
+                    </div>
+                    <!-- Pikachu -->
+                    <div class="collection-card">
+                        <img src="img/Pikachu.jpg" alt="Pikachu">
+                        <p>Pikachu</p>
+                    </div>
+                    <!-- Flaaffy -->
+                    <div class="collection-card">
+                        <img src="img/Flaaffy.PNG" alt="Flaaffy">
+                        <p>Flaaffy</p>
+                    </div>
+                    <!-- Squirtle -->
+                    <div class="collection-card">
+                        <img src="img/Squirtle.PNG" alt="Squirtle">
+                        <p>Squirtle</p>
+                    </div>
+                    <!-- Butterfree -->
+                    <div class="collection-card">
+                        <img src="img/Butterfree.PNG" alt="Butterfree">
+                        <p>Butterfree</p>
+                    </div>
+                    <!-- Chikorita-->
+                    <div class="collection-card">
+                        <img src="img/Chikorita.PNG" alt="Chikorita">
+                        <p>Chikorita</p>
+                    </div>
+                    <!-- Bulbasaur -->
+                    <div class="collection-card">
+                        <img src="img/Bulbasaur.PNG" alt="Bulbasaur">
+                        <p>Bulbasaur</p>
+                    </div>
+                    <!-- Swablu -->
+                    <div class="collection-card">
+                        <img src="img/Swablu.PNG" alt="Swablu">
+                        <p>Swablu</p>
+                    </div>
+                    <!-- Dodrio -->
+                    <div class="collection-card">
+                        <img src="img/Dodrio.PNG" alt="Dodrio">
+                        <p>Dodrio</p>
+                    </div>
+                    <!-- Cubone -->
+                    <div class="collection-card">
+                        <img src="img/Cubone.PNG" alt="Cubone">
+                        <p>Cubone</p>
+                    </div>
+                    <!-- Spheal -->
+                    <div class="collection-card">
+                        <img src="img/Spheal.PNG" alt="Spheal">
+                        <p>Spheal</p>
+                    </div>
+                    <!-- Arbok -->
+                    <div class="collection-card">
+                        <img src="img/Arbok.PNG" alt="Arbok">
+                        <p>Arbok</p>
+                    </div>
+                    <!-- Ekans -->
+                    <div class="collection-card">
+                        <img src="img/Ekans.PNG" alt="Ekans">
+                        <p>Ekans</p>
+                    </div>
+                    <!-- Larvitar -->
+                    <div class="collection-card">
+                        <img src="img/Larvitar.PNG" alt="Larvitar">
+                        <p>Larvitar</p>
+                    </div>
+                    <!-- Gengar -->
+                    <div class="collection-card">
+                        <img src="img/Gengar.PNG" alt="Gengar">
+                        <p>Gengar</p>
+                    </div>
+                    <!-- Gastly -->
+                    <div class="collection-card">
+                        <img src="img/Gastly.PNG" alt="Gastly">
+                        <p>Gastly</p>
+                    </div>
+                    <!-- Clefairy -->
+                    <div class="collection-card">
+                        <img src="img/Clefairy.PNG" alt="Clefairy">
+                        <p>Clefairy</p>
+                    </div>
+                    <!-- Wigglytuff -->
+                    <div class="collection-card">
+                        <img src="img/Wigglytuff.PNG" alt="Wigglytuff">
+                        <p>Wigglytuff</p>
+                    </div>
+                    <!-- Magneton -->
+                    <div class="collection-card">
+                        <img src="img/Magneton.PNG" alt="Magneton">
+                        <p>Magneton</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+</body>
 
-    <section>
-        <img src="images/pokemon/007.png" alt="Third Pokemon, click to see detailed info">
-    </section>
-
+<body>
     <section>
         <p>After clicking the above "Add Pokémon" button, users can add Pokémon in the CSV file</p>
-    </section>
-
-    <section>
-        <p>Form to filter desired Pokémon and submit add collection request</p>
+        <p>Below is the form to filter desired Pokémon and submit add collection request</p>
         <form>
-            <label for="berry">Berries:</label><br>
-            <input type="checkbox" id="berry" name="berry1"><br>
-            <input type="checkbox" id="berry" name="berry1"><br>
-            <input type="submit" value="Submit">
-        </form><br>
-        <img src="images/pokemon/001.png" alt="First Pokemon Pic, click here to add to collection">
+            <label>Berries:</label><br>
+            <!-- Belue Berry -->
+            <div class="filter-card">
+                <input type="checkbox">
+                <p><img src="img/Berries/Belue Berry.PNG" alt="Belue Berry"></p>
+            </div>
+            <!-- Pecha Berry -->
+            <div class="filter-card">
+                <input type="checkbox">
+                <p><img src="img/Berries/Pecha Berry.PNG" alt="Pecha Berry"></p>
+            </div>
+            <div>
+                <label>Sleep Types:</label><br>
+                <div>
+                    <input type="checkbox">
+                    <p>Dozing</p>
+                    <input type="checkbox">
+                    <p>Snoozing</p>
+                    <input type="checkbox">
+                    <p>Slumbering</p>
+                </div>
+            </div>
+            <br>
+            <div class="form-submit-button">
+                <input type="submit" value="Submit">
+            </div>
+        </form>
+        <div class="collection-card">
+            <img src="img/Eevee.jpg" alt="Eevee">
+            <p>Eevee</p>
+        </div>
     </section>
 </body>
 
