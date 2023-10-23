@@ -1,31 +1,93 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="Noor Aamir, Ling (Evelyn) Lin, Jessie Ren, Yi Shi">
+    <link rel="stylesheet" href="css/cooking.css">
     <title>Cooking page</title>
-    <link rel="stylesheet" type="text/css" href="css/style.css">
 </head>
+
 <body>
+    <main class="Cooking-container">
+        <header>
+            <h1>Cooking Simulator</h1>
+        </header>
 
-<h1> Cooking page </h1>
+        <section class="button-container">
+            <form>
+                <button type="button">Searching</button>
+                <button type="button">Collection</button>
+            </form>
+        </section>
 
-<img src="img/download.jpg" alt="An picture">
+        <section class="cooking-pan-container">
+            <img src="img/IMG_6804.jpg" alt="PAN">
+            <h1>Let's select for cooking</h1>
+        </section>
 
-<h2>Select an Option and Submit</h2>
-    <form action="your_server_script.php" method="POST">
-        <label for="options">Food:</label>
-        <select id="options" name="selected_option">
-            <option value="food1">food 1</option>
-            <option value="food2">food 2</option>
-            <option value="food3">food 3</option>
-        </select>
-        <br><br>
-        <input type="submit" value="Submit">
-    </form>
+        <form>
+            <table class="Ingredients-table">
+                <tbody>
+                    <tr>
+                        <td>
+                            <input type="number" min="0" value="0">
+                            <img src="img/Ingredients/Fancy Apple.PNG" alt="Fancy Apple">
+                        </td>
+            
+                        <td>
+                            <input type="number" min="0" value="0">
+                            <img src="img/Ingredients/Fancy Egg.PNG" alt="Fancy Egg">
+                        </td>
+            
+                        <td>
+                            <input type="number" min="0" value="0">
+                            <img src="img/Ingredients/Honey.PNG" alt="Honey">
+                        </td>
+            
+                        <td>
+                            <input type="number" min="0" value="0">
+                            <img src="img/Ingredients/Moomoo Milk.PNG" alt="Moomoo Milk">
+                        </td>
+            
+                        <td>
+                            <input type="number" min="0" value="0">
+                            <img src="img/Ingredients/Snoozy Tomato.PNG" alt="Snoozy Tomato">
+                        </td>
+            
+                        <td>
+                            <input type="number" min="0" value="0">
+                            <img src="img/Ingredients/Soothing Cacao.PNG" alt="Soothing Cacao">
+                        </td>
+            
+                        <td>
+                            <input type="number" min="0" value="0">
+                            <img src="img/Ingredients/Warming Ginger.PNG" alt="Warming Ginger">
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+            
 
-<p><img src="img/down.png" alt="next step"></p>
+            <section>
+                <input type="submit" value="Submit">
+            </section>
+        </form>
 
-<img src="img/dish.jpg" alt="An picture of dish">
-
+        <section>
+            <h1>Success!</h1>
+            <div class="dish-container">
+                <img class="dish" src="img/Dishes/Craft Soda Pop.PNG" alt="Craft Soda Pop" style="display:none;">
+                <img class="dish" src="img/Dishes/Ember Ginger Tea.PNG" alt="Ember Ginger Tea" style="display:none;">
+                <img class="dish" src="img/Dishes/Jigglypuff's Fruity Flan.PNG" alt="Jigglypuff's Fruity Flan" style="display:none;">
+                <img class="dish" src="img/Dishes/Lovely Kiss Smoothie.PNG" alt="Lovely Kiss Smoothie" style="display:none;">
+                <img class="dish" src="img/Dishes/Stalwart Vegetable Juice.PNG" alt="Stalwart Vegetable Juice" style="display:none;">
+                <img class="dish" src="img/Dishes/Steadfast Ginger Cookies.PNG" alt="Steadfast Ginger Cookies" style="display:none;">
+                <img class="dish" src="img/Dishes/Sweet Scent Chocolate Cake.PNG" alt="Sweet Scent Chocolate Cake" style="display:none;">
+                <img class="dish" src="img/Dishes/Warm Moomoo Milk.PNG" alt="Warm Moomoo Milk" style="display:none;">
+            </div>
+        </section>
+    </main>
 </body>
 </html>

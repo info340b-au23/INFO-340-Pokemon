@@ -1,0 +1,114 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f7f7f7;
+    color: #333;
+}
+
+.Cooking-container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+    background-color: #fff;
+    padding: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+header {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+h1 {
+    font-size: 2em;
+    color: #444;
+}
+
+.button-container {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+.button-container button {
+    background-color: #555;
+    color: #fff;
+    padding: 10px 20px;
+    margin: 0 10px;
+    border: none;
+    cursor: pointer;
+}
+
+.button-container button:hover {
+    background-color: #333;
+}
+
+.cooking-pan-container {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.cooking-pan-container img {
+    width: 100%;
+    max-width: 300px;
+    margin: 0 auto;
+    display: block;
+}
+
+.Ingredients-table, .Berries-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 20px;
+    display: grid;
+    grid-template-columns: repeat(7, 1fr); 
+    gap: 10px; 
+}
+
+.Ingredient-row, .Berry-row {
+    border-bottom: none;  
+}
+
+.Ingredients-table td, .Berries-table td {
+    padding: 10px;
+    border: 1px solid #e0e0e0; 
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.05);
+}
+
+.Ingredients-table img, .Berries-table img {
+    max-width: 60px;
+    height: auto;
+}
+
+caption {
+    font-size: 1.2em;
+    margin-bottom: 10px;
+    font-weight: bold;
+}
+
+input[type="submit"] {
+    display: block;
+    margin: 20px auto;
+    padding: 10px 20px;
+    background-color: #444;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+}
+
+input[type="submit"]:hover {
+    background-color: #333;
+}
+
+section h1, section img {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+section img {
+    max-width: 300px;
+    display: block;
+    margin: 0 auto;
+}
