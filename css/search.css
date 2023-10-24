@@ -1,11 +1,17 @@
-* {
+/* * {
     box-sizing: border-box;
 }
 
 body {
-    font-family: 'Open Sans', sans-serif;
-    display: flex;
+    font-family: Arial, sans-serif;
+    background-color: #f7f7f7;
+    color: #333;
 }
+
+h1, h2, h3, h4, h5, h6 {
+    font-size: 2em;
+    color: #444;
+} */
 
 .search-container {
     display: flex;
@@ -74,9 +80,13 @@ body {
     margin-left: 0;
 }
 
-.button-container button {
-    height: 50px;
-    width: 180px;
+.button-container button, .button-container .button-link {
+    background-color: #555;
+    color: #fff;
+    padding: 10px 20px;
+    margin: 0 10px;
+    border: none;
+    cursor: pointer;
 }
 
 @media (min-width: 992px) {

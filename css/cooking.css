@@ -6,7 +6,11 @@ body {
     font-family: Arial, sans-serif;
     background-color: #f7f7f7;
     color: #333;
-    margin: 0; 
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-size: 2em;
+    color: #444;
 }
 
 .Cooking-container {
@@ -23,26 +27,44 @@ header {
     margin-bottom: 30px;
 }
 
-h1 {
+/* h1 {
     font-size: 2em;
     color: #444;
-}
+} */
 
-.button-container {
+/* .button-container {
     display: flex;
     justify-content: center;
     margin-bottom: 20px;
+} */
+
+.button-container {
+    display: inline-block;
+    padding: 0.5rem;
+    padding-top: 0;
+    padding-left: 0;
+    margin: 0.5rem;
+    margin-top: 0;
+    margin-left: 0;
 }
 
-.button-container button {
-    /*  */
+/* .button-container button {
     background-color: #555;
     color: #fff;
     padding: 10px 20px;
     margin: 0 10px;
     border: none;
     cursor: pointer;
-}
+} */
+
+/* .button-container button, .button-container .button-link {
+    background-color: #555;
+    color: #fff;
+    padding: 10px 20px;
+    margin: 0 10px;
+    border: none;
+    cursor: pointer;
+} */
 
 .button-container button:hover {
     background-color: #333;
@@ -68,7 +90,6 @@ h1 {
 }
 
 .Ingredients-table td {
-    /*  */
     padding: 10px;
     border: 1px solid #e0e0e0;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.05);
@@ -76,7 +97,6 @@ h1 {
 }
 
 .Ingredients-table img {
-    /*  */
     max-width: 60px;
     height: auto;
 }

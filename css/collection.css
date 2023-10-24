@@ -1,11 +1,17 @@
-* {
+/* * {
     box-sizing: border-box;
 }
 
 body {
-    font-family: 'Open Sans', sans-serif;
-    display: flex;
+    font-family: Arial, sans-serif;
+    background-color: #f7f7f7;
+    color: #333;
 }
+
+h1, h2, h3, h4, h5, h6 {
+    font-size: 2em;
+    color: #444;
+} */
 
 .collection-main-container {
     display: flex;
@@ -36,12 +42,12 @@ body {
     border-radius: 10px;
 }
 
-.collection p {
+.collection-card p {
     font-family: 'Playpen Sans', cursive;
     color: white;
 }
 
-.button-container {
+/* .button-container {
     display: inline-block;
     padding: 0.5rem;
     padding-top: 0;
@@ -52,9 +58,13 @@ body {
 }
 
 .button-container button, .button-container .button-link {
-    height: 50px;
-    width: 180px;
-}
+    background-color: #555;
+    color: #fff;
+    padding: 10px 20px;
+    margin: 0 10px;
+    border: none;
+    cursor: pointer;
+} */
 
 .button-link {
     display: inline-block;
@@ -72,14 +82,14 @@ body {
     background-color: #ddd;
 }
 
-.filter-card {
-    display: inline-block;
-}
+/* .filter-card {
+    display: flex;
+} */
 
-.filter-card img {
+/* .filter-card img {
     height: 50px;
     width: 50px;
-}
+} */
 
 @media (min-width: 992px) {
 
