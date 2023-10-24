@@ -1,0 +1,79 @@
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0;
+    background-color: #ccc6c6;
+    font-family: 'Helvetica', sans-serif;
+    color: #333;
+}
+
+#container {
+    background-color: #fff9f9;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+    max-width: 600px;
+    padding: 2rem;
+    text-align: center;
+}
+
+h1, h2 {
+    font-size: 28px;
+    color: #6800e6;
+    text-align: center;
+}
+
+.filter-card {
+    display: flex;
+    align-items: center;
+    margin: 10px 0;
+    text-align: center;
+}
+
+.filter-card input[type="checkbox"] {
+    margin-right: 10px;
+}
+
+.filter-card img {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    border: 2px solid #d4bebf;
+}
+
+.form-submit-button {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.section-container {
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.collection-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 20px;
+    text-align: center;
+}
+
+
+#addButton {
+    margin-top: 10px;
+    padding: 10px 20px;
+    background-color: #8f2424;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 18px;
+    transition: background-color 0.3s;
+    text-align: center;
+}
+
+#addButton:hover {
+    background-color: #2b4d71;
+}
