@@ -1,4 +1,4 @@
-* {
+/* * {
     box-sizing: border-box;
 }
 
@@ -11,21 +11,21 @@ body {
 h1, h2, h3, h4, h5, h6 {
     font-size: 2em;
     color: #444;
-}
+} */
 
-.Cooking-container {
+/* .Cooking-container {
     width: 100%;
     max-width: 768px; 
     margin: 0 auto;
     background-color: #fff;
     padding: 20px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-}
+} */
 
-header {
+/* header {
     text-align: center;
     margin-bottom: 30px;
-}
+} */
 
 /* h1 {
     font-size: 2em;
@@ -38,7 +38,7 @@ header {
     margin-bottom: 20px;
 } */
 
-.button-container {
+/* .button-container {
     display: inline-block;
     padding: 0.5rem;
     padding-top: 0;
@@ -46,7 +46,7 @@ header {
     margin: 0.5rem;
     margin-top: 0;
     margin-left: 0;
-}
+} */
 
 /* .button-container button {
     background-color: #555;
@@ -66,7 +66,7 @@ header {
     cursor: pointer;
 } */
 
-.button-container button:hover {
+/* .button-container button:hover {
     background-color: #333;
 }
 
@@ -154,9 +154,9 @@ section img {
 
 .ingredient-item input[type="number"] {
     margin-right: 10px; 
-}
+} */
 
-@media (min-width: 992px) {
+/* @media (min-width: 992px) {
 
     .Ingredients-table td {
         width: 100%;
@@ -175,4 +175,4 @@ section img {
         flex-direction: column;
         align-items: center;
     }
-}
+} */
