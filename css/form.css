@@ -9,7 +9,7 @@ body {
     color: #333;
 }
 
-#container {
+.form-container {
     background-color: #fff9f9;
     border-radius: 10px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
@@ -61,7 +61,7 @@ h1, h2 {
 }
 
 
-#addButton {
+.addButton {
     margin-top: 10px;
     padding: 10px 20px;
     background-color: #8f2424;
@@ -74,6 +74,6 @@ h1, h2 {
     text-align: center;
 }
 
-#addButton:hover {
+.addButton:hover {
     background-color: #2b4d71;
 }
