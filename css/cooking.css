@@ -6,11 +6,12 @@ body {
     font-family: Arial, sans-serif;
     background-color: #f7f7f7;
     color: #333;
+    margin: 0; 
 }
 
 .Cooking-container {
-    width: 90%;
-    max-width: 1200px;
+    width: 100%;
+    max-width: 768px; 
     margin: 0 auto;
     background-color: #fff;
     padding: 20px;
@@ -58,26 +59,20 @@ h1 {
     display: block;
 }
 
-.Ingredients-table, .Berries-table {
+.Ingredients-table {
     width: 100%;
     border-collapse: collapse;
     margin-bottom: 20px;
-    display: grid;
-    grid-template-columns: repeat(7, 1fr); 
-    gap: 10px; 
 }
 
-.Ingredient-row, .Berry-row {
-    border-bottom: none;  
-}
-
-.Ingredients-table td, .Berries-table td {
+.Ingredients-table td {
     padding: 10px;
-    border: 1px solid #e0e0e0; 
+    border: 1px solid #e0e0e0;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.05);
+    text-align: center;
 }
 
-.Ingredients-table img, .Berries-table img {
+.Ingredients-table img {
     max-width: 60px;
     height: auto;
 }
@@ -113,46 +108,55 @@ section img {
     margin: 0 auto;
 }
 
+
+.ingredient-item {
+    background-color: #fafafa;
+    padding: 10px; 
+    border-radius: 5px; 
+    display: flex; 
+    align-items: center; 
+    justify-content: space-between; 
+}
+
+.ingredient-item img {
+    border: 1px solid #ddd; 
+    border-radius: 5px;
+    transition: transform 0.3s; 
+}
+
+.ingredient-item img:hover {
+    transform: scale(1.1);
+}
+
+.ingredient-item input[type="number"] {
+    margin-right: 10px; 
+}
+
 @media (max-width: 768px) {
-    .Cooking-container {
+    .Ingredients-table img {
+        max-width: 80%;
+    }
+}
+
+@media (max-width: 768px) {
+    .Ingredients-table {
+        display: block;
+    }
+
+    .Ingredients-table td {
         width: 100%;
-        padding: 10px;
+        box-sizing: border-box;
+    }
+
+    .Ingredients-table img {
+        max-width: 100%;
+        height: auto;
+        display: block;
+        margin: 0 auto;
     }
 
     .button-container {
         flex-direction: column;
         align-items: center;
-        margin-bottom: 10px;
-    }
-
-    .button-container button {
-        margin: 5px 0;
-    }
-
-    .cooking-pan-container img {
-        max-width: 100%;
-    }
-
-    .Ingredients-table, .Berries-table {
-        display: block;
-        width: 100%;
-    }
-
-    .Ingredients-table td, .Berries-table td {
-        box-shadow: none;
-        border: none;
-        padding: 5px 0;
-    }
-
-    .Ingredients-table img, .Berries-table img {
-        max-width: 100%;
-    }
-
-    input[type="submit"] {
-        margin: 10px auto;
-    }
-
-    section img {
-        max-width: 100%;
     }
 }
