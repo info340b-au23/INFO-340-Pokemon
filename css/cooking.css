@@ -112,3 +112,47 @@ section img {
     display: block;
     margin: 0 auto;
 }
+
+@media (max-width: 768px) {
+    .Cooking-container {
+        width: 100%;
+        padding: 10px;
+    }
+
+    .button-container {
+        flex-direction: column;
+        align-items: center;
+        margin-bottom: 10px;
+    }
+
+    .button-container button {
+        margin: 5px 0;
+    }
+
+    .cooking-pan-container img {
+        max-width: 100%;
+    }
+
+    .Ingredients-table, .Berries-table {
+        display: block;
+        width: 100%;
+    }
+
+    .Ingredients-table td, .Berries-table td {
+        box-shadow: none;
+        border: none;
+        padding: 5px 0;
+    }
+
+    .Ingredients-table img, .Berries-table img {
+        max-width: 100%;
+    }
+
+    input[type="submit"] {
+        margin: 10px auto;
+    }
+
+    section img {
+        max-width: 100%;
+    }
+}
