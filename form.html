@@ -2,122 +2,145 @@
 <html>
 
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Add Pokemon Collection</title>
     <link rel="stylesheet" type="text/css" href="css/style.css">
+    <link rel="icon" type="image/x-icon" href="img/favicon.png">
 </head>
 
 <body>
-    <div class="form-container">
-        <h1>Add to Pokemon Collection</h1>
+    <main>
+        <div class="form-container">
+            <h1>Add to Pokemon Collection</h1>
 
-        <section class="button-container">
-            <form action="collection.html" method="get">
-                <button type="submit">Return to Collection</button>
+            <section class="button-container">
+                <a href="collection.html" class="button-nav">Return to Collection</a>
+            </section>
+
+            <!-- Form for filtering and submitting the add collection request -->
+            <form class="add-collection-form">
+                <div class="section-container">
+                    <fieldset>
+                        <h2>Berries</h2>
+                        <legend>Select Berries</legend>
+                        <!-- Belue Berry -->
+                        <div class="form-filter-card">
+                            <input type="checkbox" aria-describedby="belue-berry-checkbox">
+                            <img src="img/Berries/Belue Berry.PNG" alt="Belue Berry">
+                            <label for="belue-berry">Belue Berry</label>
+                        </div>
+                        <!-- Bluk Berry -->
+                        <div class="form-filter-card">
+                            <input type="checkbox" aria-describedby="bluk-berry-checkbox">
+                            <img src="img/Berries/Bluk Berry.PNG" alt="Bluk Berry">
+                            <label for="bluk-berry">Bluk Berry</label>
+                        </div>
+                        <!-- Chesto Berry -->
+                        <div class="form-filter-card">
+                            <input type="checkbox" aria-describedby="chesto-berry-checkbox">
+                            <img src="img/Berries/Chesto Berry.PNG" alt="Chesto Berry">
+                            <label for="chesto-berry">Chesto Berry</label>
+                        </div>
+                        <!-- Durin Berry -->
+                        <div class="form-filter-card">
+                            <input type="checkbox" aria-describedby="durin-berry-checkbox">
+                            <img src="img/Berries/Durin Berry.PNG" alt="Durin Berry">
+                            <label for="durin-berry">Durin Berry</label>
+                        </div>
+                        <!-- Figy Berry -->
+                        <div class="form-filter-card">
+                            <input type="checkbox" aria-describedby="figy-berry-checkbox">
+                            <img src="img/Berries/Figy Berry.PNG" alt="Figy Berry">
+                            <label for="figy-berry">Figy Berry</label>
+                        </div>
+                        <!-- Grepa Berry -->
+                        <div class="form-filter-card">
+                            <input type="checkbox" aria-describedby="grepa-berry-checkbox">
+                            <img src="img/Berries/Grepa Berry.PNG" alt="Grepa Berry">
+                            <label for="grepa-berry">Grepa Berry</label>
+                        </div>
+                        <!-- Lum Berry -->
+                        <div class="form-filter-card">
+                            <input type="checkbox" aria-describedby="lum-berry-checkbox">
+                            <img src="img/Berries/Lum Berry.PNG" alt="Lum Berry">
+                            <label for="lum-berry">Lum Berry</label>
+                        </div>
+                        <!-- Mago Berry -->
+                        <div class="form-filter-card">
+                            <input type="checkbox" aria-describedby="mago-berry-checkbox">
+                            <img src="img/Berries/Mago Berry.PNG" alt="Mago Berry">
+                            <label for="mago-berry">Mago Berry</label>
+                        </div>
+                        <!-- Oran Berry -->
+                        <div class="form-filter-card">
+                            <input type="checkbox" aria-describedby="oran-berry-checkbox">
+                            <img src="img/Berries/Oran Berry.PNG" alt="Oran Berry">
+                            <label for="oran-berry">Oran Berry</label>
+                        </div>
+                        <!-- Pamtre Berry -->
+                        <div class="form-filter-card">
+                            <input type="checkbox" aria-describedby="pamtre-berry-checkbox">
+                            <img src="img/Berries/Pamtre Berry.PNG" alt="Pamtre Berry">
+                            <label for="pamtre-berry">Pamtre Berry</label>
+                        </div>
+                        <!-- Pecha Berry -->
+                        <div class="form-filter-card">
+                            <input type="checkbox" aria-describedby="pecha-berry-checkbox">
+                            <img src="img/Berries/Pecha Berry.PNG" alt="Pecha Berry">
+                            <label for="pecha-berry">Pecha Berry</label>
+                        </div>
+                        <!-- Persim Berry -->
+                        <div class="form-filter-card">
+                            <input type="checkbox" aria-describedby="persim-berry-checkbox">
+                            <img src="img/Berries/Persim Berry.PNG" alt="Persim Berry">
+                            <label for="persim-berry">Persim Berry</label>
+                        </div>
+                        <!-- Rawst Berry -->
+                        <div class="form-filter-card">
+                            <input type="checkbox" aria-describedby="rawst-berry-checkbox">
+                            <img src="img/Berries/Rawst Berry.PNG" alt="Rawst Berry">
+                            <label for="rawst-berry">Rawst Berry</label>
+                        </div>
+                        <!-- Sitrus Berry -->
+                        <div class="form-filter-card">
+                            <input type="checkbox" aria-describedby="sitrus-berry-checkbox">
+                            <img src="img/Berries/Sitrus Berry.PNG" alt="Sitrus Berry">
+                            <label for="sitrus-berry">Sitrus Berry</label>
+                        </div>
+                    </fieldset>
+                </div>
+
+                <div class="section-container">
+                    <fieldset>
+                        <h2>Sleep Types</h2>
+                        <legend>Select Sleep Types</legend>
+                        <div class="form-filter-card">
+                            <input type="checkbox" aria-describedby="dozing-checkbox">
+                            <label for="dozing">Dozing</label>
+                        </div>
+                        <div class="form-filter-card">
+                            <input type="checkbox" aria-describedby="snoozing-checkbox">
+                            <label for="snoozing">Snoozing</label>
+                        </div>
+                        <div class="form-filter-card">
+                            <input type="checkbox" aria-describedby="slumbering-checkbox">
+                            <label for="slumbering">Slumbering</label>
+                        </div>
+                    </fieldset>
+                </div>
+                <br>
+                <div class="form-submit-button">
+                    <input type="submit" value="Submit">
+                </div>
             </form>
-        </section>
-
-        <!-- Form for filtering and submitting the add collection request -->
-        <form id="addCollectionForm">
-            <div class="section-container">
-                <h2>Berries</h2>
-                <!-- Belue Berry -->
-                <div class="form-filter-card">
-                    <input type="checkbox">
-                    <img src="img/Berries/Belue Berry.PNG" alt="Belue Berry">
-                </div>
-                <!-- Bluk Berry -->
-                <div class="form-filter-card">
-                    <input type="checkbox">
-                    <img src="img/Berries/Bluk Berry.PNG" alt="Bluk Berry">
-                </div>
-                <!-- Chesto Berry -->
-                <div class="form-filter-card">
-                    <input type="checkbox">
-                    <img src="img/Berries/Chesto Berry.PNG" alt="Chesto Berry">
-                </div>
-                <!-- Durin Berry -->
-                <div class="form-filter-card">
-                    <input type="checkbox">
-                    <img src="img/Berries/Durin Berry.PNG" alt="Durin Berry">
-                </div>
-                <!-- Figy Berry -->
-                <div class="form-filter-card">
-                    <input type="checkbox">
-                    <img src="img/Berries/Figy Berry.PNG" alt="Figy Berry">
-                </div>
-                <!-- Grepa Berry -->
-                <div class="form-filter-card">
-                    <input type="checkbox">
-                    <img src="img/Berries/Grepa Berry.PNG" alt="Grepa Berry">
-                </div>
-                <!-- Lum Berry -->
-                <div class="form-filter-card">
-                    <input type="checkbox">
-                    <img src="img/Berries/Lum Berry.PNG" alt="Lum Berry">
-                </div>
-                <!-- Mago Berry -->
-                <div class="form-filter-card">
-                    <input type="checkbox">
-                    <img src="img/Berries/Mago Berry.PNG" alt="Mago Berry">
-                </div>
-                <!-- Oran Berry -->
-                <div class="form-filter-card">
-                    <input type="checkbox">
-                    <img src="img/Berries/Oran Berry.PNG" alt="Oran Berry">
-                </div>
-                <!-- Pamtre Berry -->
-                <div class="form-filter-card">
-                    <input type="checkbox">
-                    <img src="img/Berries/Pamtre Berry.PNG" alt="Pamtre Berry">
-                </div>
-                <!-- Pecha Berry -->
-                <div class="form-filter-card">
-                    <input type="checkbox">
-                    <img src="img/Berries/Pecha Berry.PNG" alt="Pecha Berry">
-                </div>
-                <!-- Persim Berry -->
-                <div class="form-filter-card">
-                    <input type="checkbox">
-                    <img src="img/Berries/Persim Berry.PNG" alt="Persim Berry">
-                </div>
-                <!-- Rawst Berry -->
-                <div class="form-filter-card">
-                    <input type="checkbox">
-                    <img src="img/Berries/Rawst Berry.PNG" alt="Rawst Berry">
-                </div>
-                <!-- Sitrus Berry -->
-                <div class="form-filter-card">
-                    <input type="checkbox">
-                    <img src="img/Berries/Sitrus Berry.PNG" alt="Sitrus Berry">
-                </div>
-            </div>
-
-            <div class="section-container">
-                <h2>Sleep Types</h2>
-                <div class="form-filter-card">
-                    <input type="checkbox">
-                    <p>Dozing</p>
-                </div>
-                <div class="form-filter-card">
-                    <input type="checkbox">
-                    <p>Snoozing</p>
-                </div>
-                <div class="form-filter-card">
-                    <input type="checkbox">
-                    <p>Slumbering</p>
-                </div>
-            </div>
-            <br>
-            <div class="form-submit-button">
-                <input type="submit" value="Submit">
-            </div>
-        </form>
-    </div>
-    <div class="form-card">
-        <img src="img/Eevee.jpg" alt="Eevee">
-        <p>Eevee</p>
-        <button class="addButton">Add</button>
-    </div>
+        </div>
+        <div class="form-card">
+            <img src="img/Eevee.jpg" alt="Eevee">
+            <p>Eevee</p>
+            <button class="add-button">Add</button>
+        </div>
+    </main>
 </body>
 
 </html>

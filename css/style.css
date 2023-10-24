@@ -8,7 +8,12 @@ body {
     color: #333;
 }
 
-h1, h2, h3, h4, h5, h6 {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
     font-size: 2em;
     color: #444;
 }
@@ -32,7 +37,7 @@ h1, h2, h3, h4, h5, h6 {
     margin: 0.5rem;
 }
 
-.search-card { 
+.search-card {
     display: flex;
     flex: 0 0 180px;
     flex-direction: column;
@@ -82,7 +87,7 @@ h1, h2, h3, h4, h5, h6 {
     margin-left: 0;
 }
 
-.button-container button, .button-container .button-link {
+.button-container .button-nav {
     background-color: #555;
     color: #fff;
     padding: 10px 20px;
@@ -127,30 +132,24 @@ h1, h2, h3, h4, h5, h6 {
     color: white;
 }
 
-.button-link {
-    display: inline-block;
-    padding: 15px 10px;
-    border: 1px solid darkgrey;
-    color: black;
-    background-color: #eee; 
-    text-align: center;
-    font-size: 0.8rem;
-    text-decoration: none;
-    cursor: pointer;
-}
-
-.button-link:hover {
-    background-color: #ddd;
-}
-
 /* Cooking.css */
-.Cooking-container {
+
+.cooking-container {
     width: 100%;
-    max-width: 768px; 
+    max-width: 768px;
     margin: 0 auto;
     background-color: #fff;
     padding: 20px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.cooking-header {
+    text-align: center;
+}
+
+.cooking-button {
+    display: flex;
+    gap: 20px;
 }
 
 .button-container button:hover {
@@ -169,23 +168,27 @@ h1, h2, h3, h4, h5, h6 {
     display: block;
 }
 
-.Ingredients-table {
+.ingredients-table {
     display: block;
     width: 100%;
     border-collapse: collapse;
     margin-bottom: 20px;
 }
 
-.Ingredients-table td {
+.ingredients-table td {
     padding: 10px;
     border: 1px solid #e0e0e0;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.05);
     text-align: center;
 }
 
-.Ingredients-table img {
+.ingredients-table img {
     max-width: 60px;
     height: auto;
+}
+
+.ingredient-table label {
+    padding-left: 5px;
 }
 
 caption {
@@ -208,7 +211,8 @@ input[type="submit"]:hover {
     background-color: #333;
 }
 
-section h1, section img {
+section h1,
+section img {
     text-align: center;
     margin-bottom: 20px;
 }
@@ -222,17 +226,17 @@ section img {
 
 .ingredient-item {
     background-color: #fafafa;
-    padding: 10px; 
-    border-radius: 5px; 
-    display: flex; 
-    align-items: center; 
-    justify-content: space-between; 
+    padding: 10px;
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
 }
 
 .ingredient-item img {
-    border: 1px solid #ddd; 
+    border: 1px solid #ddd;
     border-radius: 5px;
-    transition: transform 0.3s; 
+    transition: transform 0.3s;
 }
 
 .ingredient-item img:hover {
@@ -240,7 +244,7 @@ section img {
 }
 
 .ingredient-item input[type="number"] {
-    margin-right: 10px; 
+    margin-right: 10px;
 }
 
 /* form.css */
@@ -250,6 +254,7 @@ section img {
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
     max-width: 600px;
     padding: 2rem;
+    margin: 0 auto;
     text-align: center;
 }
 
@@ -271,6 +276,10 @@ section img {
     border: 2px solid #d4bebf;
 }
 
+.form-filter-card label {
+    padding-left: 5px;
+}
+
 .form-submit-button {
     text-align: center;
     margin-top: 20px;
@@ -290,7 +299,7 @@ section img {
 }
 
 
-.addButton {
+.add-button {
     margin-top: 10px;
     padding: 10px 20px;
     background-color: #8f2424;
@@ -303,11 +312,12 @@ section img {
     text-align: center;
 }
 
-.addButton:hover {
+.add-button:hover {
     background-color: #2b4d71;
 }
 
 @media (min-width: 992px) {
+
     /* Search.css */
     .search-feature-container {
         display: flex;
@@ -323,7 +333,7 @@ section img {
         height: 205px;
         width: 205px;
     }
-    
+
     .search-card p {
         color: #333;
     }
@@ -343,18 +353,18 @@ section img {
         height: 205px;
         width: 205px;
     }
-    
+
     .collection-card p {
         color: #333;
     }
 
     /* Cooking.css */
-    .Ingredients-table td {
+    .ingredients-table td {
         width: 100%;
         box-sizing: border-box;
     }
 
-    .Ingredients-table img {
+    .ingredients-table img {
         max-width: 100%;
         height: 200px;
         width: 200px;

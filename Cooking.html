@@ -4,24 +4,20 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="author" content="Noor Aamir, Ling (Evelyn) Lin, Jessie Ren, Yi Shi">
     <link rel="stylesheet" href="css/style.css">
-    <title>Cooking page</title>
+    <link rel="icon" type="image/x-icon" href="img/favicon.png">
+    <title>Cooking Page</title>
 </head>
 
 <body>
-    <main class="Cooking-container">
-        <header>
+    <main class="cooking-container">
+        <header class="cooking-header">
             <h1>Cooking Simulator</h1>
         </header>
 
-        <section class="button-container">
-            <form action="Search.html" method="get">
-                <button type="submit">Search</button>
-            </form>
-            <form action="collection.html" method="get">
-                <button type="submit">Collection</button>
-            </form>
+        <section class="button-container cooking-button">
+            <a href="index.html" class="button-nav">Search</a>
+            <a href="collection.html" class="button-nav">Collection</a>
         </section>
 
         <section class="cooking-pan-container">
@@ -30,73 +26,79 @@
         </section>
 
         <form>
-            <table class="Ingredients-table">
+            <table class="ingredients-table">
                 <tbody>
                     <tr>
                         <td>
                             <div class="ingredient-item">
-                                <input type="number" min="0" value="0">
+                                <input type="number" min="0" value="0" aria-describedby="fancy-apple-input">
                                 <img src="img/Ingredients/Fancy Apple.PNG" alt="Fancy Apple">
+                                <label for="fancy-apple">Fancy Apple</label>
                             </div>
                         </td>
                     </tr>
-                    
+
                     <tr>
                         <td>
                             <div class="ingredient-item">
-                                <input type="number" min="0" value="0">
+                                <input type="number" min="0" value="0" aria-describedby="fancy-egg-input">
                                 <img src="img/Ingredients/Fancy Egg.PNG" alt="Fancy Egg">
+                                <label for="fancy-egg">Fancy Egg</label>    
                             </div>
                         </td>
                     </tr>
-                    
+
                     <tr>
                         <td>
                             <div class="ingredient-item">
-                                <input type="number" min="0" value="0">
+                                <input type="number" min="0" value="0" aria-describedby="honey-input">
                                 <img src="img/Ingredients/Honey.PNG" alt="Honey">
-                            </div>  
+                                <label for="honey">Honey</label>
+                            </div>
                         </td>
                     </tr>
-                    
+
                     <tr>
                         <td>
                             <div class="ingredient-item">
-                                <input type="number" min="0" value="0">
+                                <input type="number" min="0" value="0" aria-describedby="moomoo-milk-input">
                                 <img src="img/Ingredients/Moomoo Milk.PNG" alt="Moomoo Milk">
+                                <label for="moomoo-milk">Moomoo Milk</label>
                             </div>
                         </td>
                     </tr>
-                    
+
                     <tr>
                         <td>
                             <div class="ingredient-item">
-                                <input type="number" min="0" value="0">
+                                <input type="number" min="0" value="0" aria-describedby="snoozy-tomato-input">
                                 <img src="img/Ingredients/Snoozy Tomato.PNG" alt="Snoozy Tomato">
+                                <label for="snoozy-tomato">Snoozy Tomato</label>
                             </div>
                         </td>
                     </tr>
-                    
+
                     <tr>
                         <td>
                             <div class="ingredient-item">
-                                <input type="number" min="0" value="0">
+                                <input type="number" min="0" value="0" aria-describedby="soothing-cacao-input">
                                 <img src="img/Ingredients/Soothing Cacao.PNG" alt="Soothing Cacao">
+                                <label for="soothing-cacao">Soothing Cacao</label>
                             </div>
                         </td>
                     </tr>
-                    
+
                     <tr>
                         <td>
                             <div class="ingredient-item">
-                                <input type="number" min="0" value="0">
+                                <input type="number" min="0" value="0" aria-describedby="warming-ginger-input">
                                 <img src="img/Ingredients/Warming Ginger.PNG" alt="Warming Ginger">
+                                <label for="warming-ginger">Warming Ginger</label>
                             </div>
                         </td>
                     </tr>
                 </tbody>
             </table>
-            
 
             <section>
                 <input type="submit" value="Submit">
@@ -108,14 +110,20 @@
             <div class="dish-container">
                 <img class="dish" src="img/Dishes/Craft Soda Pop.PNG" alt="Craft Soda Pop" style="display:none;">
                 <img class="dish" src="img/Dishes/Ember Ginger Tea.PNG" alt="Ember Ginger Tea" style="display:none;">
-                <img class="dish" src="img/Dishes/Jigglypuff's Fruity Flan.PNG" alt="Jigglypuff's Fruity Flan" style="display:none;">
-                <img class="dish" src="img/Dishes/Lovely Kiss Smoothie.PNG" alt="Lovely Kiss Smoothie" style="display:none;">
-                <img class="dish" src="img/Dishes/Stalwart Vegetable Juice.PNG" alt="Stalwart Vegetable Juice" style="display:none;">
-                <img class="dish" src="img/Dishes/Steadfast Ginger Cookies.PNG" alt="Steadfast Ginger Cookies" style="display:none;">
-                <img class="dish" src="img/Dishes/Sweet Scent Chocolate Cake.PNG" alt="Sweet Scent Chocolate Cake" style="display:none;">
+                <img class="dish" src="img/Dishes/Jigglypuff's Fruity Flan.PNG" alt="Jigglypuff's Fruity Flan"
+                    style="display:none;">
+                <img class="dish" src="img/Dishes/Lovely Kiss Smoothie.PNG" alt="Lovely Kiss Smoothie"
+                    style="display:none;">
+                <img class="dish" src="img/Dishes/Stalwart Vegetable Juice.PNG" alt="Stalwart Vegetable Juice"
+                    style="display:none;">
+                <img class="dish" src="img/Dishes/Steadfast Ginger Cookies.PNG" alt="Steadfast Ginger Cookies"
+                    style="display:none;">
+                <img class="dish" src="img/Dishes/Sweet Scent Chocolate Cake.PNG" alt="Sweet Scent Chocolate Cake"
+                    style="display:none;">
                 <img class="dish" src="img/Dishes/Warm Moomoo Milk.PNG" alt="Warm Moomoo Milk" style="display:none;">
             </div>
         </section>
     </main>
 </body>
+
 </html>
