@@ -1,12 +1,20 @@
 <!DOCTYPE html>
 <html>
+
 <head>
     <title>Add Pokemon Collection</title>
     <link rel="stylesheet" type="text/css" href="css/form.css">
 </head>
+
 <body>
     <div class="form-container">
         <h1>Add to Pokemon Collection</h1>
+
+        <section class="button-container">
+            <form action="collection.html" method="get">
+                <button type="submit">Return to Collection</button>
+            </form>
+        </section>
 
         <!-- Form for filtering and submitting the add collection request -->
         <form id="addCollectionForm">
@@ -105,10 +113,11 @@
             </div>
         </form>
     </div>
-        <div class="collection-card">
-            <img src="img/Eevee.jpg" alt="Eevee">
-            <p>Eevee</p>
-            <button class="addButton">Add</button>
-        </div>
+    <div class="collection-card">
+        <img src="img/Eevee.jpg" alt="Eevee">
+        <p>Eevee</p>
+        <button class="addButton">Add</button>
+    </div>
 </body>
+
 </html>
