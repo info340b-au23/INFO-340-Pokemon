@@ -22,9 +22,11 @@
             <section>
                 <div class="button-container">
                     <h2>Feature Navigation</h2>
-                    <form>
-                        <a href="Search.html" class="button-link">Search</a>
-                        <button type="button">Cooking Simulator</button>
+                    <form action="Search.html" method="get">
+                        <button type="submit">Search</button>
+                    </form>
+                    <form action="Cooking.html" method="get">
+                        <button type="submit">Cooking</button>
                     </form>
                 </div>
             </section>
@@ -32,8 +34,11 @@
             <!-- Conains cards and filters to make cards lay left and filters lay right. -->
             <div class="current-collection-container">
                 <!-- Click to add Pokémon to collection. -->
-                <section>
-                    <button>Add Pokémon</button>
+                <section class="button-container">
+                    <h2>Click the button below to navigate to the pop-up form</h2>
+                    <form action="form.html" method="get">
+                        <button type="submit">Add Pokémon</button>
+                    </form>
                 </section>
 
                 <!-- Contains all cards. -->
