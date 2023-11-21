@@ -1,0 +1,50 @@
+import React, { useState } from 'react';
+
+function App(props) {
+    const card = props.pokemon.map((oneP) => {
+        return (
+            <div className="collection-card" key={oneP.name}>
+                <img src={oneP.image} alt={oneP.name}></img>
+                <p>{oneP.name}</p>
+            </div>
+        )
+    })
+
+    return (
+        <div>
+            <header>
+                <nav>
+                    <div class="navbar">
+                        <div class="navigation">
+                            <p>Navigation:</p>
+                        </div>
+                        <div class="navItem">
+                            <button><a href="index.html">Searching</a></button>
+                        </div>
+                        <div class="navItem">
+                            <button><a href="Cooking.html">Cooking</a></button>
+                        </div>
+                    </div>
+                </nav>
+                <h1>My Collection</h1>
+            </header>
+            <main>
+                <section class="button-container">
+                    <h2>Click the button below to navigate to the pop-up form</h2>
+                    <a href="form.html" class="button-nav">Add Pokémon</a>
+                </section>
+
+                <div class="collection-cards-container">
+                    {card}
+                </div>
+            </main>
+            <footer>
+                <p>This web application was created by us using our own two hands.</p>
+                <address>Contact Noor Aamir at <a href="mailto:naamir@uw.edu">naamir@uw.edu</a>, Ling (Evelyn) Lin at <a href="mailto:lingl3@uw.edu">lingl3@uw.edu</a>, Jessie Ren at <a href="mailto:siyiren@uw.edu">siyiren@uw.edu</a>, and Yi Shi at <a href="mailto:yshi6@uw.edu">yshi6@uw.edu</a>.</address>
+                <p>&copy; 2023 INFO 340 Team B6.</p>
+            </footer>
+        </div>
+    )
+}
+
+export default App;
