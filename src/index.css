@@ -1,0 +1,403 @@
+* {
+    box-sizing: border-box;
+}
+
+nav {
+    background-color: #555;
+    height: 50px;
+}
+
+.navbar {
+    display: flex;
+}
+
+.navItem {
+    padding: 15px;
+}
+
+.navItem button {
+    height: 25px;
+    font-size: 15px;
+}
+
+.navigation {
+    padding-left: 25px;
+    padding-right: 10px;
+    color: #f7f7f7;
+    font-size: large;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    color: #333;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-size: 2em;
+    color: #444;
+}
+
+/* Search.css */
+
+.search-container {
+    display: flex;
+    flex-direction: column;
+}
+
+.search-feature-container {
+    display: flex;
+    flex-direction: column-reverse;
+}
+
+.search-cards-container {
+    display: flex;
+    flex-wrap: wrap;
+    padding: 0.5rem;
+    margin: 0.5rem;
+}
+
+.search-card {
+    display: flex;
+    flex: 0 0 180px;
+    flex-direction: column;
+    padding: 0.5rem;
+    margin: 0.5rem;
+    border-radius: 10px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.16), 0 1px 3px rgba(0, 0, 0, 0.23);
+    background-color: #717171;
+}
+
+.search-card img {
+    height: 180px;
+    width: 180px;
+    border-radius: 10px;
+}
+
+.search-card p {
+    font-family: 'Playpen Sans', cursive;
+    color: white;
+}
+
+.search-filter-container {
+    display: flex;
+    flex-basis: 35%;
+    padding: 1rem;
+    margin: 1rem;
+    border-radius: 10px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.16), 0 1px 3px rgba(0, 0, 0, 0.23);
+}
+
+.filter-card {
+    display: inline-block;
+}
+
+.filter-card img {
+    height: 50px;
+    width: 50px;
+}
+
+.button-container {
+    display: inline-block;
+    padding: 0.5rem;
+    padding-top: 0;
+    padding-left: 0;
+    margin: 0.5rem;
+    margin-top: 0;
+    margin-left: 0;
+}
+
+.button-container .button-nav {
+    background-color: #555;
+    color: #fff;
+    padding: 10px 20px;
+    margin: 0 10px;
+    border: none;
+    cursor: pointer;
+}
+
+/* Collection.css */
+
+.collection-main-container {
+    display: flex;
+    flex-direction: column;
+}
+
+.collection-cards-container {
+    display: flex;
+    flex-wrap: wrap;
+    padding: 0.5rem;
+    margin: 0.5rem;
+}
+
+.collection-card {
+    display: flex;
+    flex: 0 0 180px;
+    flex-direction: column;
+    padding: 0.5rem;
+    margin: 0.5rem;
+    border-radius: 10px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.16), 0 1px 3px rgba(0, 0, 0, 0.23);
+    background-color: #717171;
+}
+
+.collection-card img {
+    height: 180px;
+    width: 180px;
+    border-radius: 10px;
+}
+
+.collection-card p {
+    font-family: 'Playpen Sans', cursive;
+    color: white;
+}
+
+/* Cooking.css */
+
+.cooking-container {
+    width: 100%;
+    max-width: 768px;
+    margin: 0 auto;
+    background-color: #fff;
+    padding: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.cooking-header {
+    text-align: center;
+}
+
+.cooking-button {
+    display: flex;
+    gap: 20px;
+}
+
+.button-container button:hover {
+    background-color: #333;
+}
+
+.cooking-pan-container {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.cooking-pan-container img {
+    width: 100%;
+    max-width: 300px;
+    margin: 0 auto;
+    display: block;
+}
+
+.ingredients-table {
+    display: block;
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 20px;
+}
+
+.ingredients-table td {
+    padding: 10px;
+    border: 1px solid #e0e0e0;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.05);
+    text-align: center;
+}
+
+.ingredients-table img {
+    max-width: 60px;
+    height: auto;
+}
+
+.ingredient-table label {
+    padding-left: 5px;
+}
+
+caption {
+    font-size: 1.2em;
+    margin-bottom: 10px;
+    font-weight: bold;
+}
+
+input[type="submit"] {
+    display: block;
+    margin: 20px auto;
+    padding: 10px 20px;
+    background-color: #444;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+}
+
+input[type="submit"]:hover {
+    background-color: #333;
+}
+
+section h1,
+section img {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+section img {
+    max-width: 300px;
+    display: block;
+    margin: 0 auto;
+}
+
+
+.ingredient-item {
+    background-color: #fafafa;
+    padding: 10px;
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.ingredient-item img {
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    transition: transform 0.3s;
+}
+
+.ingredient-item img:hover {
+    transform: scale(1.1);
+}
+
+.ingredient-item input[type="number"] {
+    margin-right: 10px;
+}
+
+/* form.css */
+.form-container {
+    background-color: #fff9f9;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+    max-width: 600px;
+    padding: 2rem;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.form-filter-card {
+    display: flex;
+    align-items: center;
+    margin: 10px 0;
+    text-align: center;
+}
+
+.form-filter-card input[type="checkbox"] {
+    margin-right: 10px;
+}
+
+.form-filter-card img {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    border: 2px solid #d4bebf;
+}
+
+.form-filter-card label {
+    padding-left: 5px;
+}
+
+.form-submit-button {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.section-container {
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.form-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 20px;
+    text-align: center;
+}
+
+
+.add-button {
+    margin-top: 10px;
+    padding: 10px 20px;
+    background-color: #8f2424;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 18px;
+    transition: background-color 0.3s;
+    text-align: center;
+}
+
+.add-button:hover {
+    background-color: #2b4d71;
+}
+
+@media (min-width: 992px) {
+
+    /* Search.css */
+    .search-feature-container {
+        display: flex;
+        flex-direction: row;
+    }
+
+    .search-card {
+        flex: 0 0 205px;
+        background-color: #eee;
+    }
+
+    .search-card img {
+        height: 205px;
+        width: 205px;
+    }
+
+    .search-card p {
+        color: #333;
+    }
+
+    .search-filter-container {
+        padding: 0.5rem;
+        margin: 0.5rem;
+    }
+
+    /* Collection.css */
+    .collection-card {
+        flex: 0 0 205px;
+        background-color: #eee;
+    }
+
+    .collection-card img {
+        height: 205px;
+        width: 205px;
+    }
+
+    .collection-card p {
+        color: #333;
+    }
+
+    /* Cooking.css */
+    .ingredients-table td {
+        width: 100%;
+        box-sizing: border-box;
+    }
+
+    .ingredients-table img {
+        max-width: 100%;
+        height: 200px;
+        width: 200px;
+        display: block;
+        margin: 0 auto;
+    }
+
+    .button-container {
+        flex-direction: column;
+        align-items: center;
+    }
+}
