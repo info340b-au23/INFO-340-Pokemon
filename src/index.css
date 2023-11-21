@@ -2,6 +2,14 @@
     box-sizing: border-box;
 }
 
+.search-searchButton {
+    margin-left: 5px;
+}
+
+.search-submitButton {
+    margin-top: 20px;
+}
+
 nav {
     background-color: #555;
     height: 50px;

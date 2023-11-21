@@ -5,7 +5,7 @@ export function SearchBar(props) {
         <section>
             <form>
                 <input type="text" placeholder="Search Pokemon..."></input>
-                <button type="button">Search</button>
+                <button type="button" className="search-searchButton">Search</button>
             </form>
         </section>
     )

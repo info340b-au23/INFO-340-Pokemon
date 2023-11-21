@@ -1,0 +1,161 @@
+[
+    {
+        "name": "Eevee",
+        "berry": "Persim Berry",
+        "sleepType": "Snoozing",
+        "image": "img/Eevee.jpg",
+        "berryImg": "img/Berries/Persim Berry.PNG"
+    },
+
+    {
+        "name": "Espeaon",
+        "berry": "Mago Berry",
+        "sleepType": "Snoozing",
+        "image": "img/Espeon.jpg",
+        "berryImg": "img/Berries/Mago Berry.PNG"
+    },
+
+    {
+        "name": "Pikachu",
+        "berry": "Grepa Berry",
+        "sleepType": "Snoozing",
+        "image": "img/Pikachu.jpg",
+        "berryImg": "img/Berries/Grepa Berry.PNG"
+    },
+
+    {
+        "name": "Flaaffy",
+        "berry": "Grepa Berry",
+        "sleepType": "Snoozing",
+        "image": "img/Flaaffy.PNG",
+        "berryImg": "img/Berries/Grepa Berry.PNG"
+    },
+
+    {
+        "name": "Squirtle",
+        "berry": "Oran Berry",
+        "sleepType": "Slumbering",
+        "image": "img/Squirtle.PNG",
+        "berryImg": "img/Berries/Oran Berry.PNG"
+    },
+
+    {
+        "name": "Butterfree",
+        "berry": "Lum Berry",
+        "sleepType": "Dozing",
+        "image": "img/Butterfree.PNG",
+        "berryImg": "img/Berries/Lum Berry.PNG"
+    },
+
+    {
+        "name": "Chikorita",
+        "berry": "Durin Berry",
+        "sleepType": "Dozing",
+        "image": "img/Chikorita.PNG",
+        "berryImg": "img/Berries/Durin Berry.PNG"
+    },
+
+    {
+        "name": "Bulbasaur",
+        "berry": "Durin Berry",
+        "sleepType": "Dozing",
+        "image": "img/Bulbasaur.PNG",
+        "berryImg": "img/Berries/Durin Berry.PNG"
+    },
+
+    {
+        "name": "Swablu",
+        "berry": "Pamtre Berry",
+        "sleepType": "Slumbering",
+        "image": "img/Swablu.PNG",
+        "berryImg": "img/Berries/Pamtre Berry.PNG"
+    },
+
+    {
+        "name": "Dodrio",
+        "berry": "Pamtre Berry",
+        "sleepType": "Slumbering",
+        "image": "img/Dodrio.PNG",
+        "berryImg": "img/Berries/Pamtre Berry.PNG"
+    },
+
+    {
+        "name": "Cubone",
+        "berry": "Figy Berry",
+        "sleepType": "Slumbering",
+        "image": "img/Cubone.PNG",
+        "berryImg": "img/Berries/Figy Berry.PNG"
+    },
+
+    {
+        "name": "Spheal",
+        "berry": "Rawst Berry",
+        "sleepType": "Slumbering",
+        "image": "img/Spheal.PNG",
+        "berryImg": "img/Berries/Rawst Berry.PNG"
+    },
+
+    {
+        "name": "Arbok",
+        "berry": "Chesto Berry",
+        "sleepType": "Dozing",
+        "image": "img/Arbok.PNG",
+        "berryImg": "img/Berries/Chesto Berry.PNG"
+    },
+
+    {
+        "name": "Ekans",
+        "berry": "Chesto Berry",
+        "sleepType": "Dozing",
+        "image": "img/Ekans.PNG",
+        "berryImg": "img/Berries/Chesto Berry.PNG"
+    },
+
+    {
+        "name": "Larvitar",
+        "berry": "Sitrus Berry",
+        "sleepType": "Slumbering",
+        "image": "img/Larvitar.PNG",
+        "berryImg": "img/Berries/Sitrus Berry.PNG"
+    },
+
+    {
+        "name": "Gengar",
+        "berry": "Bluk Berry",
+        "sleepType": "Slumbering",
+        "image": "img/Gengar.PNG",
+        "berryImg": "img/Berries/Bluk Berry.PNG"
+    },
+
+    {
+        "name": "Gastly",
+        "berry": "Bluk Berry",
+        "sleepType": "Dozing",
+        "image": "img/Gastly.PNG",
+        "berryImg": "img/Berries/Bluk Berry.PNG"
+    },
+
+    {
+        "name": "Clefairy",
+        "berry": "Pecha Berry",
+        "sleepType": "Snoozing",
+        "image": "img/Clefairy.PNG",
+        "berryImg": "img/Berries/Pecha Berry.PNG"
+    },
+
+    {
+        "name": "Wigglytuff",
+        "berry": "Pecha Berry",
+        "sleepType": "Snoozing",
+        "image": "img/Wigglytuff.PNG",
+        "berryImg": "img/Berries/Pecha Berry.PNG"
+    },
+
+    {
+        "name": "Magneton",
+        "berry": "Belue Berry",
+        "sleepType": "Slumbering",
+        "image": "img/Magneton.PNG",
+        "berryImg": "img/Berries/Belue Berry.PNG"
+    }
+]
