@@ -1,25 +1,57 @@
 import React, { useState } from "react";
 
 export function FilterBar({ berries, types, applyFilterCallback }) {
-    const [filterBerry, setFilterBerry] = useState('');
-    const [filterType, setFilterType] = useState('');
+    // const [filterBerry, setFilterBerry] = useState('');
+    // const [filterType, setFilterType] = useState('');
+
+    const [filterBerry, setFilterBerry] = useState([]);
+    const [filterType, setFilterType] = useState([]);
+
+    // const handleBerryChange = (event) => {
+    //     setFilterBerry(event.target.checked);
+    // }
 
     const handleBerryChange = (event) => {
-        setFilterBerry(event.target.checked);
-    }
+        const { name, checked } = event.target;
+        setFilterBerry(prev => {
+            if (checked) {
+                return [...prev, { name, checked }];
+            }
+            else {
+                return prev.filter(berry => 
+                    berry.name !== name);
+            }
+        });
+    };
+
+    // const handleTypeChange = (event) => {
+    //     setFilterType(event.target.checked)
+    // }
 
     const handleTypeChange = (event) => {
-        setFilterType(event.target.checked)
-    }
+        const { id, checked } = event.target;
+        setFilterType(prev => {
+            if (checked) {
+                return [...prev, { id, checked }];
+            }
+            else {
+                return prev.filter(type => 
+                    type.id !== id);
+            }
+        });
+    };
 
     const handleClick = (event) => {
         applyFilterCallback(filterBerry, filterType);
+        // Test
+        console.log(filterBerry)
+        console.log(filterType)
     }
 
     const berry = berries.map((pm) => {
         return (
             <div className="filter-card" key={pm.berry}>
-                <input id={pm.berry} type="checkbox" value="" onChange={handleBerryChange}></input>
+                <input name={pm.berry} type="checkbox" value="" onChange={handleBerryChange}></input>
                 <p><img src={pm.berryImg} alt={pm.berry}></img></p>
             </div>
         )

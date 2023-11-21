@@ -5,6 +5,30 @@ import { CardList } from './CardList';
 import { FilterBar } from './FilterBar';
 
 function App(props) {
+    const [filterBerry, setFilterBerry] = useState([]);
+    const [filterType, setFilterType] = useState([]);
+
+    const selectedBerries = filterBerry.filter(berry => berry.checked).map(berry => berry.name);
+    const selectedTypes = filterType.filter(type => type.checked).map(type => type.id);
+
+    let displayedData;
+    if (selectedBerries.length === 0 && selectedTypes.length === 0) {
+        displayedData = props.pokemon;
+    } else if (selectedBerries.length > 0 && selectedTypes.length === 0) {
+        displayedData = props.pokemon.filter(pm => selectedBerries.includes(pm.berry));
+    } else if (selectedBerries.length === 0 && selectedTypes.length > 0) {
+        displayedData = props.pokemon.filter(pm => selectedTypes.includes(pm.sleepType));
+    } else {
+        displayedData = props.pokemon.filter(pm => 
+            selectedBerries.includes(pm.berry) && selectedTypes.includes(pm.sleepType)
+        );
+    }
+
+    const applyFilter = (selectedBerry, selectedType) => {
+        setFilterBerry(selectedBerry);
+        setFilterType(selectedType);
+    }
+
     let uniqueBerries = [];
     let seenBerry = new Set();
     for (let pm of props.pokemon) {
@@ -21,44 +45,6 @@ function App(props) {
             seenType.add(pm.sleepType);
             uniqueTypes.push(pm);
         }
-    }
-
-    const [filterBerry, setFilterBerry] = useState('');
-    const [filterType, setFilterType] = useState('');
-
-    let displayedData;
-    if (filterBerry === '') {
-        if (filterType === '') {
-            displayedData = props.pokemon;
-        }
-        else {
-            displayedData = props.pokemon.filter((pm) => {
-                return (
-                    pm.sleepType === filterType
-                )
-            })
-        }
-    }
-    else {
-        if (filterType === '') {
-            displayedData = props.pokemon.filter((pm) => {
-                return (
-                    pm.berry === filterBerry
-                )
-            })
-        }
-        else {
-            displayedData = props.pokemon.filter((pm) => {
-                return (
-                    pm.berry === filterBerry && pm.sleepType === filterType
-                )
-            })
-        }
-    }
-
-    const applyFilter = (selectedBerry, selectedType) => {
-        setFilterBerry(selectedBerry);
-        setFilterType(selectedType);
     }
 
     return (
