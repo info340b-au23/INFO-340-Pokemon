@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { Navbar } from './Navbar';
 
 function App(props) {
     const card = props.pokemon.map((oneP) => {
@@ -14,17 +15,7 @@ function App(props) {
         <div>
             <header>
                 <nav>
-                    <div class="navbar">
-                        <div class="navigation">
-                            <p>Navigation:</p>
-                        </div>
-                        <div class="navItem">
-                            <button><a href="index.html">Searching</a></button>
-                        </div>
-                        <div class="navItem">
-                            <button><a href="Cooking.html">Cooking</a></button>
-                        </div>
-                    </div>
+                    <Navbar />
                 </nav>
                 <h1>My Collection</h1>
             </header>
