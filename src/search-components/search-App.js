@@ -7,26 +7,41 @@ import { FilterBar } from './FilterBar';
 function App(props) {
     const [filterBerry, setFilterBerry] = useState([]);
     const [filterType, setFilterType] = useState([]);
+    const [searchPm, setSearchPm] = useState('');
 
     const selectedBerries = filterBerry.filter(berry => berry.checked).map(berry => berry.name);
     const selectedTypes = filterType.filter(type => type.checked).map(type => type.id);
 
     let displayedData;
-    if (selectedBerries.length === 0 && selectedTypes.length === 0) {
+    if (selectedBerries.length === 0 && selectedTypes.length === 0 && searchPm === '') {
         displayedData = props.pokemon;
-    } else if (selectedBerries.length > 0 && selectedTypes.length === 0) {
+    } else if (selectedBerries.length > 0 && selectedTypes.length === 0 && searchPm === '') {
         displayedData = props.pokemon.filter(pm => selectedBerries.includes(pm.berry));
-    } else if (selectedBerries.length === 0 && selectedTypes.length > 0) {
+    } else if (selectedBerries.length === 0 && selectedTypes.length > 0 && searchPm === '') {
         displayedData = props.pokemon.filter(pm => selectedTypes.includes(pm.sleepType));
-    } else {
-        displayedData = props.pokemon.filter(pm => 
+    } else if (selectedBerries.length > 0 && selectedTypes.length > 0 && searchPm === '') {
+        displayedData = props.pokemon.filter(pm =>
             selectedBerries.includes(pm.berry) && selectedTypes.includes(pm.sleepType)
+        );
+    } else if (selectedBerries.length === 0 && selectedTypes.length === 0 && searchPm !== '') {
+        displayedData = props.pokemon.filter(pm => pm.name.toLowerCase().includes(searchPm.toLowerCase()));
+    } else if (selectedBerries.length > 0 && selectedTypes.length === 0 && searchPm !== '') {
+        displayedData = props.pokemon.filter(pm => selectedBerries.includes(pm.berry) && pm.name.toLowerCase().includes(searchPm.toLowerCase()));
+    } else if (selectedBerries.length === 0 && selectedTypes.length > 0 && searchPm !== '') {
+        displayedData = props.pokemon.filter(pm => selectedTypes.includes(pm.sleepType) && pm.name.toLowerCase().includes(searchPm.toLowerCase()));
+    } else {
+        displayedData = props.pokemon.filter(pm =>
+            selectedBerries.includes(pm.berry) && selectedTypes.includes(pm.sleepType) && pm.name.toLowerCase().includes(searchPm.toLowerCase())
         );
     }
 
     const applyFilter = (selectedBerry, selectedType) => {
         setFilterBerry(selectedBerry);
         setFilterType(selectedType);
+    }
+
+    const applySearch = (searchedPm) => {
+        setSearchPm(searchedPm);
     }
 
     let uniqueBerries = [];
@@ -56,7 +71,7 @@ function App(props) {
                 <header>
                     <h1>Pokemon Dex</h1>
                 </header>
-                <SearchBar />
+                <SearchBar applySearchCallback={applySearch} />
                 <div className="search-feature-container">
                     <CardList pokemon={displayedData} />
                     <FilterBar berries={uniqueBerries} types={uniqueTypes} applyFilterCallback={applyFilter} />

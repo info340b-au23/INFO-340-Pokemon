@@ -1,15 +1,8 @@
 import React, { useState } from "react";
 
 export function FilterBar({ berries, types, applyFilterCallback }) {
-    // const [filterBerry, setFilterBerry] = useState('');
-    // const [filterType, setFilterType] = useState('');
-
     const [filterBerry, setFilterBerry] = useState([]);
     const [filterType, setFilterType] = useState([]);
-
-    // const handleBerryChange = (event) => {
-    //     setFilterBerry(event.target.checked);
-    // }
 
     const handleBerryChange = (event) => {
         const { name, checked } = event.target;
@@ -23,10 +16,6 @@ export function FilterBar({ berries, types, applyFilterCallback }) {
             }
         });
     };
-
-    // const handleTypeChange = (event) => {
-    //     setFilterType(event.target.checked)
-    // }
 
     const handleTypeChange = (event) => {
         const { id, checked } = event.target;
@@ -43,9 +32,6 @@ export function FilterBar({ berries, types, applyFilterCallback }) {
 
     const handleClick = (event) => {
         applyFilterCallback(filterBerry, filterType);
-        // Test
-        console.log(filterBerry)
-        console.log(filterType)
     }
 
     const berry = berries.map((pm) => {
