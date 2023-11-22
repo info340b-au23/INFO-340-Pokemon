@@ -402,3 +402,49 @@ section img {
         align-items: center;
     }
 }
+
+@media (max-width: 768px) {
+    /*  Collection.css */
+    .collection-card {
+        flex: 0 0 150px; 
+        margin: 0.3rem; 
+    }
+
+    .collection-card img {
+        height: 150px;
+        width: 150px; 
+    }
+
+    /*  Cooking.css */
+    .cooking-container {
+        padding: 15px; 
+    }
+
+    .ingredients-table img {
+        max-width: 50px; 
+    }
+
+    .cooking-pan-container img {
+        max-width: 250px;
+    }
+
+    /*  Search.css */
+    .search-card {
+        flex: 0 0 150px; 
+        margin: 0.3rem; 
+    }
+
+    .search-card img {
+        height: 150px;
+        width: 150px; 
+    }
+
+    .search-feature-container {
+        flex-direction: column; 
+    }
+
+    .search-filter-container {
+        margin-top: 1rem; 
+        padding: 0.5rem; 
+    }
+}
