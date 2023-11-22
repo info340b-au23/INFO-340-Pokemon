@@ -27,5 +27,4 @@ export function ResultDisplay({ result }) {
 }
 
 export default ResultDisplay;
-
   
