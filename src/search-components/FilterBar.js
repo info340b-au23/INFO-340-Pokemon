@@ -11,7 +11,7 @@ export function FilterBar({ berries, types, applyFilterCallback }) {
                 return [...prev, { name, checked }];
             }
             else {
-                return prev.filter(berry => 
+                return prev.filter(berry =>
                     berry.name !== name);
             }
         });
@@ -24,7 +24,7 @@ export function FilterBar({ berries, types, applyFilterCallback }) {
                 return [...prev, { id, checked }];
             }
             else {
-                return prev.filter(type => 
+                return prev.filter(type =>
                     type.id !== id);
             }
         });
@@ -60,7 +60,9 @@ export function FilterBar({ berries, types, applyFilterCallback }) {
                 {berry}
                 <h3>by sleep type</h3>
                 {sleepType}
-                <button id="submitButton" type="submit" className="search-submitButton" onClick={handleClick}>Apply Filter</button>
+                <div className="filter-submit-button">
+                    <button id="submitButton" type="submit" className="search-submitButton" onClick={handleClick}>Apply Filter</button>
+                </div>
             </section>
         </div>
     )

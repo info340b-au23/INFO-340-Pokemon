@@ -11,7 +11,15 @@
 }
 
 .search-submitButton {
-    margin-top: 20px;
+    height: 2rem;
+    width: 6rem;
+    font-size: 15px;
+    background-color: #555;
+    color: #f7f7f7;
+}
+
+.filter-submit-button {
+    margin-top: 15px;
 }
 
 nav {
@@ -103,7 +111,7 @@ h6 {
 
 .search-feature-container {
     display: flex;
-    flex-direction: column;
+    flex-direction: column-reverse;
 }
 
 .search-cards-container {
@@ -137,20 +145,27 @@ h6 {
 
 .search-filter-container {
     display: flex;
-    flex-basis: 35%;
-    padding: 0.5rem;
-    margin-top: 1rem;
+    flex-basis: 25%;
+    padding: 1rem;
+    margin: 0.5rem;
+    margin-top: 25px;
     border-radius: 10px;
     box-shadow: 0 1px 3px rgba(0, 0, 0, 0.16), 0 1px 3px rgba(0, 0, 0, 0.23);
 }
 
+.search-filter-container h2, h3 {
+    margin: 2px;
+}
+
 .filter-card {
     display: inline-block;
+    margin: 5px;
 }
 
 .filter-card img {
     height: 50px;
     width: 50px;
+    border-radius: 50px;
 }
 
 .button-container {
@@ -466,7 +481,7 @@ section img {
     /* Search.css */
     .search-feature-container {
         display: flex;
-        flex-direction: row;
+        flex-direction: column-reverse;
     }
 
     .search-card {
@@ -481,11 +496,6 @@ section img {
 
     .search-card p {
         color: #333;
-    }
-
-    .search-filter-container {
-        padding: 0.5rem;
-        margin: 0.5rem;
     }
 
     /* Collection.css */
