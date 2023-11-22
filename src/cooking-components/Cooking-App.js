@@ -46,7 +46,7 @@ function App() {
     <div className="App">
       <Header />
       <IngredientsForm ingredients={ingredients} onChange={handleIngredientChange} onSubmit={handleSubmit} />
-      <ResultDisplay result={result} />
+      {result && <ResultDisplay result={result} />}
       <Footer />
     </div>
   );

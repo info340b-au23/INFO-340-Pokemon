@@ -70,3 +70,5 @@ export function IngredientsForm({ ingredients, onChange, onSubmit }) {
     </form>
   );
 }
+
+export default IngredientsForm;
