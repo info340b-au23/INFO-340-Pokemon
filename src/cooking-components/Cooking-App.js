@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import IngredientsForm from './IngredientsForm';
 import ResultDisplay from './ResultDisplay';
+import { Navbar } from './Navbar';
 
 function App() {
   const [ingredients, setIngredients] = useState({
@@ -13,6 +14,8 @@ function App() {
     warmingGinger: 0
   });
   const [result, setResult] = useState(null);
+
+  const [isOpen, setIsOpen] = useState(false);
 
   const handleIngredientChange = (ingredient, value) => {
     setIngredients(prevIngredients => ({
@@ -42,12 +45,35 @@ function App() {
     return null;
   };
 
+  const H1 = ({ isOpen }) => {
+    return (
+      <div>
+        <h1 className={`h1 ${isOpen ? 'navbar-open' : ''}`}>Cooking Simulator</h1>
+      </div>
+    );
+  }
+
+  const applyMenu = (isOpen) => {
+    setIsOpen(isOpen)
+  }
+
   return (
     <div className="App">
-      <Header />
-      <IngredientsForm ingredients={ingredients} onChange={handleIngredientChange} onSubmit={handleSubmit} />
-      {result && <ResultDisplay result={result} />}
-      <Footer />
+      <main>
+        <hearder>
+          <nav>
+            <Navbar applyMenuCallBack={applyMenu} />
+          </nav>
+          <H1 isOpen={isOpen} />
+        </hearder>
+        <IngredientsForm ingredients={ingredients} onChange={handleIngredientChange} onSubmit={handleSubmit} />
+        {result && <ResultDisplay result={result} />}
+        <footer>
+          <p>This web application was created by us using our own two hands.</p>
+          <address>Contact Noor Aamir at <a href="mailto:naamir@uw.edu">naamir@uw.edu</a>, Ling (Evelyn) Lin at <a href="mailto:lingl3@uw.edu">lingl3@uw.edu</a>, Jessie Ren at <a href="mailto:siyiren@uw.edu">siyiren@uw.edu</a>, and Yi Shi at <a href="mailto:yshi6@uw.edu">yshi6@uw.edu</a>.</address>
+          <p>&copy; 2023 INFO 340 Team B6.</p>
+        </footer>
+      </main>
     </div>
   );
 }

@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, {useState} from 'react';
 
 export function Navbar(props) {
     const [isOpen, setIsOpen] = useState(false);
@@ -19,11 +19,11 @@ export function Navbar(props) {
                 </button>
             </div>
             <div className={`navItems ${isOpen ? 'open' : ''}`}>
-                <div class="navItem">
+                <div className="navItem">
                     <a href="index.html">Searching</a>
                 </div>
-                <div class="navItem">
-                    <a href="Cooking.html">Cooking</a>
+                <div className="navItem">
+                    <a href="collection.html">Collection</a>
                 </div>
             </div>
         </div>

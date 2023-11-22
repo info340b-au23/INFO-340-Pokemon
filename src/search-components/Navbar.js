@@ -5,6 +5,7 @@ export function Navbar(props) {
 
     const toggleMenu = () => {
         setIsOpen(!isOpen);
+        props.applyMenuCallBack(!isOpen);
     };
 
     return (

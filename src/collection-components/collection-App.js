@@ -2,6 +2,20 @@ import React, { useState } from 'react';
 import { Navbar } from './Navbar';
 
 function App(props) {
+    const [isOpen, setIsOpen] = useState(false);
+
+    const H1 = ({ isOpen }) => {
+        return (
+            <div>
+                <h1 className={`h1 ${isOpen ? 'navbar-open' : ''}`}>My Collection</h1>
+            </div>
+        );
+    }
+
+    const applyMenu = (isOpen) => {
+        setIsOpen(isOpen)
+    }
+
     const card = props.pokemon.map((oneP) => {
         return (
             <div className="collection-card" key={oneP.name}>
@@ -15,9 +29,9 @@ function App(props) {
         <div>
             <header>
                 <nav>
-                    <Navbar />
+                    <Navbar applyMenuCallBack={applyMenu} />
                 </nav>
-                <h1>My Collection</h1>
+                <H1 isOpen={isOpen} />
             </header>
             <main>
                 <section class="button-container">

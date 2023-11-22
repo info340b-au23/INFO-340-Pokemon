@@ -8,6 +8,7 @@ function App(props) {
     const [filterBerry, setFilterBerry] = useState([]);
     const [filterType, setFilterType] = useState([]);
     const [searchPm, setSearchPm] = useState('');
+    const [isOpen, setIsOpen] = useState(false);
 
     const selectedBerries = filterBerry.filter(berry => berry.checked).map(berry => berry.name);
     const selectedTypes = filterType.filter(type => type.checked).map(type => type.id);
@@ -62,14 +63,26 @@ function App(props) {
         }
     }
 
+    const H1 = ({ isOpen }) => {
+        return (
+            <div>
+                <h1 className={`h1 ${isOpen ? 'navbar-open' : ''}`}>Pokemon Dex</h1>
+            </div>
+        );
+    }
+
+    const applyMenu = (isOpen) => {
+        setIsOpen(isOpen)
+    }
+
     return (
         <div>
             <main>
-                <nav>
-                    <Navbar />
-                </nav>
                 <header>
-                    <h1>Pokemon Dex</h1>
+                    <nav>
+                        <Navbar applyMenuCallBack={applyMenu} />
+                    </nav>
+                    <H1 isOpen={isOpen} />
                 </header>
                 <SearchBar applySearchCallback={applySearch} />
                 <div className="search-feature-container">
