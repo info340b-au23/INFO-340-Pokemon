@@ -59,25 +59,26 @@ function App() {
 
   return (
     <div className="App">
+      <header className="cooking-container">
+        <nav>
+          <Navbar applyMenuCallBack={applyMenu} />
+        </nav>
+        <H1 isOpen={isOpen} />
+      </header>
       <main className="cooking-container">
-        <hearder>
-          <nav>
-            <Navbar applyMenuCallBack={applyMenu} />
-          </nav>
-          <H1 isOpen={isOpen} />
-        </hearder>
+
         <section className="cooking-pan-container">
           <img src="img/IMG_6804.jpg" alt="PAN"></img>
           <h1>Let's select for cooking</h1>
         </section>
         <IngredientsForm ingredients={ingredients} onChange={handleIngredientChange} onSubmit={handleSubmit} />
         {result && <ResultDisplay result={result} />}
-        <footer>
-          <p>This web application was created by us using our own two hands.</p>
-          <address>Contact Noor Aamir at <a href="mailto:naamir@uw.edu">naamir@uw.edu</a>, Ling (Evelyn) Lin at <a href="mailto:lingl3@uw.edu">lingl3@uw.edu</a>, Jessie Ren at <a href="mailto:siyiren@uw.edu">siyiren@uw.edu</a>, and Yi Shi at <a href="mailto:yshi6@uw.edu">yshi6@uw.edu</a>.</address>
-          <p>&copy; 2023 INFO 340 Team B6.</p>
-        </footer>
       </main>
+      <footer className="cooking-container">
+        <p>This web application was created by us using our own two hands.</p>
+        <address>Contact Noor Aamir at <a href="mailto:naamir@uw.edu">naamir@uw.edu</a>, Ling (Evelyn) Lin at <a href="mailto:lingl3@uw.edu">lingl3@uw.edu</a>, Jessie Ren at <a href="mailto:siyiren@uw.edu">siyiren@uw.edu</a>, and Yi Shi at <a href="mailto:yshi6@uw.edu">yshi6@uw.edu</a>.</address>
+        <p>&copy; 2023 INFO 340 Team B6.</p>
+      </footer>
     </div>
   );
 }

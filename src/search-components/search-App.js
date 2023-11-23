@@ -77,13 +77,13 @@ function App(props) {
 
     return (
         <div>
+            <header>
+                <nav>
+                    <Navbar applyMenuCallBack={applyMenu} />
+                </nav>
+                <H1 isOpen={isOpen} />
+            </header>
             <main>
-                <header>
-                    <nav>
-                        <Navbar applyMenuCallBack={applyMenu} />
-                    </nav>
-                    <H1 isOpen={isOpen} />
-                </header>
                 <SearchBar applySearchCallback={applySearch} />
                 <div className="search-feature-container">
                     <CardList pokemon={displayedData} />
