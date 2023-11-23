@@ -59,13 +59,17 @@ function App() {
 
   return (
     <div className="App">
-      <main>
+      <main className="cooking-container">
         <hearder>
           <nav>
             <Navbar applyMenuCallBack={applyMenu} />
           </nav>
           <H1 isOpen={isOpen} />
         </hearder>
+        <section className="cooking-pan-container">
+          <img src="img/IMG_6804.jpg" alt="PAN"></img>
+          <h1>Let's select for cooking</h1>
+        </section>
         <IngredientsForm ingredients={ingredients} onChange={handleIngredientChange} onSubmit={handleSubmit} />
         {result && <ResultDisplay result={result} />}
         <footer>

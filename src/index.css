@@ -2,6 +2,11 @@
     box-sizing: border-box;
 }
 
+.cooking-form-container {
+    display: flex;
+    justify-content: center;
+}
+
 .h1.navbar-open {
     padding-top: 70px;
 }
@@ -226,6 +231,8 @@ h6 {
 /* Cooking.css */
 
 .cooking-container {
+    display: flex;
+    flex-direction: column;
     width: 100%;
     max-width: 768px;
     margin: 0 auto;
@@ -248,13 +255,14 @@ h6 {
 }
 
 .cooking-pan-container {
-    max-width: 250px;
-    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
     margin-bottom: 30px;
 }
 
 .cooking-pan-container img {
-    width: 100%;
+    width: 50%;
     max-width: 300px;
     margin: 0 auto;
     display: block;
@@ -319,6 +327,7 @@ section img {
 .ingredient-item {
     background-color: #fafafa;
     padding: 10px;
+    margin: 10px;
     border-radius: 5px;
     display: flex;
     align-items: center;
@@ -327,7 +336,9 @@ section img {
 
 .ingredient-item img {
     border: 1px solid #ddd;
-    border-radius: 5px;
+    height: 80px;
+    width: 80px;
+    border-radius: 50px;
     transition: transform 0.3s;
 }
 
