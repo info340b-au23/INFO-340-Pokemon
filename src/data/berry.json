@@ -1,0 +1,73 @@
+[
+    {
+        "berryName": "Belue Berry",
+        "berryNameDash": "belue-berry",
+        "source": "img/Berries/Belue Berry.PNG"
+    },
+
+    {
+        "berryName": "Bluk Berry",
+        "berryNameDash": "bluk-berry",
+        "source": "img/Berries/Bluk Berry.PNG"
+    },
+    {
+        "berryName": "Chesto Berry",
+        "berryNameDash": "chesto-berry",
+        "source": "img/Berries/Chesto Berry.PNG"
+    },
+    {
+        "berryName": "Durin Berry",
+        "berryNameDash": "durin-berry",
+        "source": "img/Berries/Durin Berry.PNG"
+    },
+    {
+        "berryName": "Figy Berry",
+        "berryNameDash": "figy-berry",
+        "source": "img/Berries/Figy Berry.PNG"
+    },
+    {
+        "berryName": "Grepa Berry",
+        "berryNameDash": "grepa-berry",
+        "source": "img/Berries/Grepa Berry.PNG"
+    },
+    {
+        "berryName": "Lum Berry",
+        "berryNameDash": "lum-berry",
+        "source": "img/Berries/Lum Berry.PNG"
+    },
+    {
+        "berryName": "Mago Berry",
+        "berryNameDash": "mago-berry",
+        "source": "img/Berries/Mago Berry.PNG"
+    },
+    {
+        "berryName": "Oran Berry",
+        "berryNameDash": "oran-berry",
+        "source": "img/Berries/Oran Berry.PNG"
+    },
+    {
+        "berryName": "Pamtre Berry",
+        "berryNameDash": "pamtre-berry",
+        "source": "img/Berries/Pamtre Berry.PNG"
+    },
+    {
+        "berryName": "Pecha Berry",
+        "berryNameDash": "pecha-berry",
+        "source": "img/Berries/Pecha Berry.PNG"
+    },
+    {
+        "berryName": "Persim Berry",
+        "berryNameDash": "persim-berry",
+        "source": "img/Berries/Persim Berry.PNG"
+    },
+    {
+        "berryName": "Rawst Berry",
+        "berryNameDash": "rawst-berry",
+        "source": "img/Berries/Rawst Berry.PNG"
+    },
+    {
+        "berryName": "Sitrus Berry",
+        "berryNameDash": "sitrus-berry",
+        "source": "img/Berries/Sitrus Berry.PNG"
+    }
+]

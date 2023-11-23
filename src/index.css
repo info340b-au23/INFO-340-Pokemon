@@ -116,7 +116,7 @@ h6 {
 
 .search-feature-container {
     display: flex;
-    flex-direction: column-reverse;
+    flex-direction: column;
 }
 
 .search-cards-container {
@@ -490,11 +490,6 @@ section img {
     }
 
     /* Search.css */
-    .search-feature-container {
-        display: flex;
-        flex-direction: column-reverse;
-    }
-
     .search-card {
         flex: 0 0 205px;
         background-color: #eee;

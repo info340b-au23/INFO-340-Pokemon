@@ -2,7 +2,7 @@ import React from 'react';
 import BerriesSection from './BerriesSection';
 import SleepTypesSection from './SleepTypesSection';
 
-function Form() {
+export function Form(props) {
   return (
     <div className="form-container">
       <h1>Add to Pokemon Collection</h1>
@@ -12,7 +12,7 @@ function Form() {
       </section>
 
       <form className="add-collection-form">
-        <BerriesSection />
+        <BerriesSection berries={props.berries}/>
         <SleepTypesSection />
 
         {/* Other sections/components can be added here if needed */}

@@ -5,12 +5,13 @@ import App from './search-components/search-App';
 // import Collection from './collection-components/collection-App';
 // import Cooking from './cooking-components/Cooking-App';
 // import Form from './form-components/Form';
-import data from './data/pokemon.json';
+import pokemon from './data/pokemon.json';
+// import berry from './data/berry.json';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
-    <App pokemon={data}/>
-    // <Collection pokemon={data}/>
+    <App pokemon={pokemon}/>
+    // <Collection pokemon={pokemon}/>
     // <Cooking />
-    // <Form />
+    // <Form berries={berry}/>
 );
