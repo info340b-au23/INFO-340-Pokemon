@@ -4,7 +4,8 @@
         "berry": "Persim Berry",
         "sleepType": "Snoozing",
         "image": "img/Eevee.jpg",
-        "berryImg": "img/Berries/Persim Berry.PNG"
+        "berryImg": "img/Berries/Persim Berry.PNG",
+        "mainSkill": "Ingredient Magnet S"
     },
 
     {
@@ -12,7 +13,8 @@
         "berry": "Mago Berry",
         "sleepType": "Snoozing",
         "image": "img/Espeon.jpg",
-        "berryImg": "img/Berries/Mago Berry.PNG"
+        "berryImg": "img/Berries/Mago Berry.PNG",
+        "mainSkill": "Charge Strength M"
     },
 
     {
@@ -20,7 +22,8 @@
         "berry": "Grepa Berry",
         "sleepType": "Snoozing",
         "image": "img/Pikachu.jpg",
-        "berryImg": "img/Berries/Grepa Berry.PNG"
+        "berryImg": "img/Berries/Grepa Berry.PNG",
+        "mainSkill": "Charge Strength S"
     },
 
     {
@@ -28,7 +31,8 @@
         "berry": "Grepa Berry",
         "sleepType": "Snoozing",
         "image": "img/Flaaffy.PNG",
-        "berryImg": "img/Berries/Grepa Berry.PNG"
+        "berryImg": "img/Berries/Grepa Berry.PNG",
+        "mainSkill": "Charge Strength M"
     },
 
     {
@@ -36,7 +40,8 @@
         "berry": "Oran Berry",
         "sleepType": "Slumbering",
         "image": "img/Squirtle.PNG",
-        "berryImg": "img/Berries/Oran Berry.PNG"
+        "berryImg": "img/Berries/Oran Berry.PNG",
+        "mainSkill": "Ingredient Magnet S"
     },
 
     {
@@ -44,7 +49,8 @@
         "berry": "Lum Berry",
         "sleepType": "Dozing",
         "image": "img/Butterfree.PNG",
-        "berryImg": "img/Berries/Lum Berry.PNG"
+        "berryImg": "img/Berries/Lum Berry.PNG",
+        "mainSkill": "Ingredient Magnet S"
     },
 
     {
@@ -52,7 +58,8 @@
         "berry": "Durin Berry",
         "sleepType": "Dozing",
         "image": "img/Chikorita.PNG",
-        "berryImg": "img/Berries/Durin Berry.PNG"
+        "berryImg": "img/Berries/Durin Berry.PNG",
+        "mainSkill": "Charge Strength S"
     },
 
     {
@@ -60,7 +67,8 @@
         "berry": "Durin Berry",
         "sleepType": "Dozing",
         "image": "img/Bulbasaur.PNG",
-        "berryImg": "img/Berries/Durin Berry.PNG"
+        "berryImg": "img/Berries/Durin Berry.PNG",
+        "mainSkill": "Ingredient Magnet S"
     },
 
     {
@@ -68,7 +76,8 @@
         "berry": "Pamtre Berry",
         "sleepType": "Slumbering",
         "image": "img/Swablu.PNG",
-        "berryImg": "img/Berries/Pamtre Berry.PNG"
+        "berryImg": "img/Berries/Pamtre Berry.PNG",
+        "mainSkill": "Charge Energy S"
     },
 
     {
@@ -76,7 +85,8 @@
         "berry": "Pamtre Berry",
         "sleepType": "Slumbering",
         "image": "img/Dodrio.PNG",
-        "berryImg": "img/Berries/Pamtre Berry.PNG"
+        "berryImg": "img/Berries/Pamtre Berry.PNG",
+        "mainSkill": "Charge Energy S"
     },
 
     {
@@ -84,7 +94,8 @@
         "berry": "Figy Berry",
         "sleepType": "Slumbering",
         "image": "img/Cubone.PNG",
-        "berryImg": "img/Berries/Figy Berry.PNG"
+        "berryImg": "img/Berries/Figy Berry.PNG",
+        "mainSkill": "Charge Energy S"
     },
 
     {
@@ -92,7 +103,8 @@
         "berry": "Rawst Berry",
         "sleepType": "Slumbering",
         "image": "img/Spheal.PNG",
-        "berryImg": "img/Berries/Rawst Berry.PNG"
+        "berryImg": "img/Berries/Rawst Berry.PNG",
+        "mainSkill": "Ingredient Magnet S"
     },
 
     {
@@ -100,7 +112,8 @@
         "berry": "Chesto Berry",
         "sleepType": "Dozing",
         "image": "img/Arbok.PNG",
-        "berryImg": "img/Berries/Chesto Berry.PNG"
+        "berryImg": "img/Berries/Chesto Berry.PNG",
+        "mainSkill": "Charge Energy S"
     },
 
     {
@@ -108,7 +121,8 @@
         "berry": "Chesto Berry",
         "sleepType": "Dozing",
         "image": "img/Ekans.PNG",
-        "berryImg": "img/Berries/Chesto Berry.PNG"
+        "berryImg": "img/Berries/Chesto Berry.PNG",
+        "mainSkill": "Charge Energy S"
     },
 
     {
@@ -116,7 +130,8 @@
         "berry": "Sitrus Berry",
         "sleepType": "Slumbering",
         "image": "img/Larvitar.PNG",
-        "berryImg": "img/Berries/Sitrus Berry.PNG"
+        "berryImg": "img/Berries/Sitrus Berry.PNG",
+        "mainSkill": "Charge Energy S"
     },
 
     {
@@ -124,7 +139,8 @@
         "berry": "Bluk Berry",
         "sleepType": "Slumbering",
         "image": "img/Gengar.PNG",
-        "berryImg": "img/Berries/Bluk Berry.PNG"
+        "berryImg": "img/Berries/Bluk Berry.PNG",
+        "mainSkill": "Charge Strength S"
     },
 
     {
@@ -132,7 +148,8 @@
         "berry": "Bluk Berry",
         "sleepType": "Dozing",
         "image": "img/Gastly.PNG",
-        "berryImg": "img/Berries/Bluk Berry.PNG"
+        "berryImg": "img/Berries/Bluk Berry.PNG",
+        "mainSkill": "Charge Strength S"
     },
 
     {
@@ -140,7 +157,8 @@
         "berry": "Pecha Berry",
         "sleepType": "Snoozing",
         "image": "img/Clefairy.PNG",
-        "berryImg": "img/Berries/Pecha Berry.PNG"
+        "berryImg": "img/Berries/Pecha Berry.PNG",
+        "mainSkill": "Metronome"
     },
 
     {
@@ -148,7 +166,8 @@
         "berry": "Pecha Berry",
         "sleepType": "Snoozing",
         "image": "img/Wigglytuff.PNG",
-        "berryImg": "img/Berries/Pecha Berry.PNG"
+        "berryImg": "img/Berries/Pecha Berry.PNG",
+        "mainSkill": "Energy for Everyone S"
     },
 
     {
@@ -156,6 +175,7 @@
         "berry": "Belue Berry",
         "sleepType": "Slumbering",
         "image": "img/Magneton.PNG",
-        "berryImg": "img/Berries/Belue Berry.PNG"
+        "berryImg": "img/Berries/Belue Berry.PNG",
+        "mainSkill": "Cooking Power-Up S"
     }
 ]
