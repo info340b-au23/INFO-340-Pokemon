@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { NavLink } from 'react-router-dom';
 
 export function Navbar(props) {
     const [isOpen, setIsOpen] = useState(false);
@@ -20,10 +21,10 @@ export function Navbar(props) {
             </div>
             <div className={`navItems ${isOpen ? 'open' : ''}`}>
                 <div class="navItem">
-                    <a href="index.html">Searching</a>
+                    <NavLink to={"/searching"}>Searching</NavLink>
                 </div>
                 <div class="navItem">
-                    <a href="Cooking.html">Cooking</a>
+                    <NavLink to={"/cooking"}>Cooking</NavLink>
                 </div>
             </div>
         </div>
