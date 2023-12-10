@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { Navbar } from './Navbar';
+import { NavLink } from 'react-router-dom';
 
 function App(props) {
     const [isOpen, setIsOpen] = useState(false);
@@ -20,7 +21,8 @@ function App(props) {
         return (
             <div className="collection-card" key={oneP.name}>
                 <img src={oneP.image} alt={oneP.name}></img>
-                <p>{oneP.name}</p>
+                {/* <p>{oneP.name}</p> */}
+                <NavLink to={`/pokemon/${oneP.name}`} className="cardText">{oneP.name}</NavLink>
             </div>
         )
     })
@@ -36,7 +38,8 @@ function App(props) {
             <main>
                 <section class="button-container">
                     <h2>Click the button below to navigate to the pop-up form</h2>
-                    <a href="form.html" class="button-nav">Add Pokémon</a>
+                    {/* <a href="form.html" class="button-nav">Add Pokémon</a> */}
+                    <NavLink to={"/form"} className="linkButton">Add Pokémon</NavLink>
                 </section>
 
                 <div class="collection-cards-container">

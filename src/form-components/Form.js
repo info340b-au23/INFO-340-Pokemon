@@ -1,6 +1,7 @@
 import React from 'react';
 import BerriesSection from './BerriesSection';
 import SleepTypesSection from './SleepTypesSection';
+import { NavLink } from 'react-router-dom';
 
 export function Form(props) {
   return (
@@ -10,7 +11,8 @@ export function Form(props) {
       </header>
       <main>
         <section className="button-container">
-          <a href="collection.html" className="button-nav">Return to Collection</a>
+          {/* <a href="collection.html" className="button-nav">Return to Collection</a> */}
+          <NavLink to={"/collection"} className="linkButton">Ruturn to Collection</NavLink>
         </section>
 
         <form className="add-collection-form">

@@ -2,6 +2,23 @@
     box-sizing: border-box;
 }
 
+.linkButton {
+    background-color: #555;
+    color: #fff;
+    padding: 10px 20px;
+    margin: 0 10px;
+    border: none;
+    cursor: pointer;
+}
+
+.info {
+    display: flex;
+}
+
+.info-text {
+    margin-left: 50px;
+}
+
 .cooking-form-container {
     display: flex;
     justify-content: center;
@@ -9,6 +26,10 @@
 
 .h1.navbar-open {
     padding-top: 70px;
+}
+
+.h1.navbar-open-detail {
+    padding-top: 100px;
 }
 
 .search-searchButton {
@@ -116,7 +137,7 @@ h6 {
 
 .search-feature-container {
     display: flex;
-    flex-direction: column;
+    flex-direction: column-reverse;
 }
 
 .search-cards-container {
@@ -143,8 +164,10 @@ h6 {
     border-radius: 10px;
 }
 
-.search-card p {
+.cardText {
     font-family: 'Playpen Sans', cursive;
+    margin-top: 15px;
+    margin-bottom: 15px;
     color: white;
 }
 
@@ -500,7 +523,7 @@ section img {
         width: 205px;
     }
 
-    .search-card p {
+    .cardText {
         color: #333;
     }
 

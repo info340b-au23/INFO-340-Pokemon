@@ -1,4 +1,5 @@
 import React from "react";
+import { NavLink } from "react-router-dom";
 
 export function CardList(props) {
     const pokemon = props.pokemon;
@@ -7,7 +8,7 @@ export function CardList(props) {
         return (
             <div className="search-card" key={oneP.name}>
                 <img src={oneP.image} alt={oneP.name}></img>
-                <p>{oneP.name}</p>
+                <NavLink to={`/pokemon/${oneP.name}`} className="cardText">{oneP.name}</NavLink>
             </div>
         )
     })
