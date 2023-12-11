@@ -1,7 +1,7 @@
 import React from 'react';
 
 function SleepTypesSection(props) {
-  const { onSleepTypeChange } = props;
+  const { onSleepTypeChange, selectedSleepTypes } = props;
 
   const sleepTypes = ['Dozing', 'Snoozing', 'Slumbering']; 
 

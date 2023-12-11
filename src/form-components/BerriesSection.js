@@ -1,7 +1,7 @@
 import React from 'react';
 
 function BerriesSection(props) {
-  const { berries, onBerryChange } = props;
+  const { berries, onBerryChange, selectedBerries } = props;
 
   const handleBerryChange = (berryName) => {
     onBerryChange(berryName);

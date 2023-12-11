@@ -1,6 +1,6 @@
 import React from "react";
 
-export function ResultDisplay({ result }) {
+function ResultDisplay({ result }) {
   const dishImages = {
     'Warm Moomoo Milk': '/img/Dishes/Warm Moomoo Milk.PNG',
     'Sweet Scent Chocolate Cake': '/img/Dishes/Sweet Scent Chocolate Cake.PNG',
@@ -25,4 +25,6 @@ export function ResultDisplay({ result }) {
     </div>
   );
 }
+
+export default ResultDisplay;
   

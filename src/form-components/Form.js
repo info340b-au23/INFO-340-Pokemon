@@ -62,8 +62,8 @@ export function Form(props) {
         </section>
 
         <form className="add-collection-form">
-          <BerriesSection berries={props.berries} onBerryChange={handleBerryChange} />
-          <SleepTypesSection onSleepTypeChange={handleSleepTypeChange} />
+          <BerriesSection berries={props.berries} selectedBerries={selectedBerries} onBerryChange={handleBerryChange} />
+          <SleepTypesSection selectedSleepTypes={selectedSleepTypes} onSleepTypeChange={handleSleepTypeChange} />
 
           <div className="form-card">
             <img src="img/Eevee.jpg" alt="Eevee" />
