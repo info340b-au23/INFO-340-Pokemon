@@ -27,8 +27,10 @@ function App() {
   const handleSubmit = (e) => {
     e.preventDefault();
     const dish = determineDish(ingredients);
+    console.log("Dish determined:", dish);
     setResult(dish);
   };
+  
 
   const determineDish = (ingredients) => {
     const { fancyApple, fancyEgg, honey, moomooMilk, snoozyTomato, soothingCacao, warmingGinger } = ingredients;
