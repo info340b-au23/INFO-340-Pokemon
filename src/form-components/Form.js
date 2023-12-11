@@ -1,9 +1,56 @@
-import React from 'react';
+import React, { useState } from 'react';
 import BerriesSection from './BerriesSection';
 import SleepTypesSection from './SleepTypesSection';
+import { saveAs } from 'file-saver';
 import { NavLink } from 'react-router-dom';
 
 export function Form(props) {
+  const [selectedBerries, setSelectedBerries] = useState([]);
+  const [selectedSleepTypes, setSelectedSleepTypes] = useState([]);
+
+  const handleBerryChange = (berryName) => {
+    const updatedBerries = [...selectedBerries];
+    const index = updatedBerries.indexOf(berryName);
+
+    if (index === -1) {
+      updatedBerries.push(berryName);
+    } else {
+      updatedBerries.splice(index, 1);
+    }
+
+    setSelectedBerries(updatedBerries);
+  };
+
+  const handleSleepTypeChange = (sleepType) => {
+    const updatedSleepTypes = [...selectedSleepTypes];
+    const index = updatedSleepTypes.indexOf(sleepType);
+
+    if (index === -1) {
+      updatedSleepTypes.push(sleepType);
+    } else {
+      updatedSleepTypes.splice(index, 1);
+    }
+
+    setSelectedSleepTypes(updatedSleepTypes);
+  };
+
+  const handleAddPokemon = () => {
+    const pokemonData = {
+      name: 'Eevee',
+      berries: selectedBerries,
+      sleepTypes: selectedSleepTypes,
+    };
+
+    
+    const jsonString = JSON.stringify(pokemonData, null, 2);
+    const blob = new Blob([jsonString], { type: 'application/json' });
+    saveAs(blob, 'Pokemon.json');
+
+  
+    setSelectedBerries([]);
+    setSelectedSleepTypes([]);
+  };
+
   return (
     <div className="form-container">
       <header>
@@ -11,20 +58,19 @@ export function Form(props) {
       </header>
       <main>
         <section className="button-container">
-          {/* <a href="collection.html" className="button-nav">Return to Collection</a> */}
-          <NavLink to={"/collection"} className="linkButton">Ruturn to Collection</NavLink>
+          <NavLink to={"/collection"} className="linkButton">Return to Collection</NavLink>
         </section>
 
         <form className="add-collection-form">
-          <BerriesSection berries={props.berries} />
-          <SleepTypesSection />
-
-          {/* Other sections/components can be added here if needed */}
+          <BerriesSection berries={props.berries} onBerryChange={handleBerryChange} />
+          <SleepTypesSection onSleepTypeChange={handleSleepTypeChange} />
 
           <div className="form-card">
             <img src="img/Eevee.jpg" alt="Eevee" />
             <p>Eevee</p>
-            <button className="add-button">Add</button>
+            <button className="add-button" onClick={handleAddPokemon}>
+              Add
+            </button>
           </div>
 
           <div className="form-submit-button">
