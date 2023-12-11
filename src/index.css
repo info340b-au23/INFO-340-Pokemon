@@ -314,6 +314,14 @@ h6 {
     padding-left: 5px;
 }
 
+.ingredient-item input[type="number"] {
+    transition: transform 0.2s ease-in-out;
+  }
+  
+  .ingredient-item input[type="number"]:focus {
+    transform: scale(1.1);
+  }  
+
 caption {
     font-size: 1.2em;
     margin-bottom: 10px;

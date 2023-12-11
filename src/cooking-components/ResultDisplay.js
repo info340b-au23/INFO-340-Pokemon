@@ -13,7 +13,7 @@ export function ResultDisplay({ result }) {
   };
 
   return (
-    <div>
+    <div className={`result-display ${result ? 'show' : ''}`}>
       {result ? (
         <>
           <h1>Success! Dish: {result}</h1>
@@ -25,6 +25,4 @@ export function ResultDisplay({ result }) {
     </div>
   );
 }
-
-export default ResultDisplay;
   
