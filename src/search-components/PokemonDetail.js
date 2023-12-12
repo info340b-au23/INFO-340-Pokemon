@@ -1,6 +1,6 @@
 import React, {useState} from 'react';
 import { useParams } from 'react-router-dom';
-import { Navbar } from './DetailNavbar';
+import { BNavbar } from './Navbar';
 
 import _ from 'lodash';
 
@@ -18,17 +18,16 @@ export default function PokemonDetail(props) {
 
     const H1 = ({ isOpen }) => {
         return (
-            <div>
+            <div className='marginLeft'>
                 <h1 className={`h1 ${isOpen ? 'navbar-open-detail' : ''}`}>{pokemon.name}</h1>
             </div>
         );
     }
-
-    console.log(pokemon)
+    
     return (
         <div>
             <nav>
-                <Navbar applyMenuCallBack={applyMenu} />
+                <BNavbar applyMenuCallBack={applyMenu} />
             </nav>
             <H1 isOpen={isOpen} />
             <div className='info'>

@@ -1,23 +1,28 @@
-import React from "react";
+import React, { useState, useEffect } from 'react';
+import listFilesAndUrls from "../firebase-code/storage-download";
 
 function ResultDisplay({ result }) {
-  const dishImages = {
-    'Warm Moomoo Milk': '/img/Dishes/Warm Moomoo Milk.PNG',
-    'Sweet Scent Chocolate Cake': '/img/Dishes/Sweet Scent Chocolate Cake.PNG',
-    'Lovely Kiss Smoothie': '/img/Dishes/Lovely Kiss Smoothie.PNG',
-    'Jigglypuff\'s Fruity Flan': '/img/Dishes/Jigglypuff\'s Fruity Flan.PNG',
-    'Craft Soda Pop': '/img/Dishes/Craft Soda Pop.PNG',
-    'Steadfast Ginger Cookies': '/img/Dishes/Steadfast Ginger Cookies.PNG',
-    'Stalwart Vegetable Juice': '/img/Dishes/Stalwart Vegetable Juice.PNG',
-    'Ember Ginger Tea': '/img/Dishes/Ember Ginger Tea.PNG'
-  };
+  const [dishImagesObject, setDishImagesObject] = useState({});
+
+  useEffect(() => {
+    const fetchData = async () => {
+      const imgData = await listFilesAndUrls('img/Dishes');
+      const imagesObj = imgData.reduce((acc, image) => {
+        let name = image.name.slice(0, -4);
+        acc[name] = image.url;
+        return acc;
+      }, {});
+      setDishImagesObject(imagesObj);
+    };
+    fetchData();
+  }, []);
 
   return (
     <div className={`result-display ${result ? 'show' : ''}`}>
       {result ? (
         <>
           <h1>Success! Dish: {result}</h1>
-          <img src={dishImages[result]} alt={result} style={{ maxWidth: '100%' }} />
+          <img src={dishImagesObject[result]} alt={result} style={{ maxWidth: '100%' }} />
         </>
       ) : (
         <h1>No matching dish found</h1>

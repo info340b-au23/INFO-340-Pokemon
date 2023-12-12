@@ -1,7 +1,8 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import IngredientsForm from './IngredientsForm';
 import ResultDisplay from './ResultDisplay';
-import { Navbar } from './Navbar';
+import { BNavbar } from './../search-components/Navbar';
+import listFilesAndUrls from "../firebase-code/storage-download";
 
 function App() {
   const [ingredients, setIngredients] = useState({
@@ -16,6 +17,17 @@ function App() {
   const [result, setResult] = useState(null);
 
   const [isOpen, setIsOpen] = useState(false);
+
+  const [panURL, setPanURL] = useState(null);
+
+  useEffect(() => {
+    const fetchData = async () => {
+      const imgData = await listFilesAndUrls('img/Pan');
+      const url = imgData[0].url;
+      setPanURL(url);
+    };
+    fetchData();
+  }, []);
 
   const handleIngredientChange = (ingredient, value) => {
     setIngredients(prevIngredients => ({
@@ -63,14 +75,14 @@ function App() {
     <div className="App">
       <header className="cooking-container">
         <nav>
-          <Navbar applyMenuCallBack={applyMenu} />
+          <BNavbar applyMenuCallBack={applyMenu} />
         </nav>
         <H1 isOpen={isOpen} />
       </header>
       <main className="cooking-container">
 
         <section className="cooking-pan-container">
-          <img src="img/IMG_6804.jpg" alt="PAN"></img>
+          <img src={panURL} alt="PAN"></img>
           <h1>Let's select for cooking</h1>
         </section>
         <IngredientsForm ingredients={ingredients} onChange={handleIngredientChange} onSubmit={handleSubmit} />

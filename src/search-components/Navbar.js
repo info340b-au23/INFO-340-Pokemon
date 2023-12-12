@@ -1,7 +1,8 @@
-import React, {useState} from 'react';
+import React, { useState } from 'react';
 import { NavLink } from 'react-router-dom';
+import { Navbar, Nav, Container } from 'react-bootstrap';
 
-export function Navbar(props) {
+export function BNavbar(props) {
     const [isOpen, setIsOpen] = useState(false);
 
     const toggleMenu = () => {
@@ -10,23 +11,18 @@ export function Navbar(props) {
     };
 
     return (
-        <div className="navbar">
-            <div className="navigation">
-                <p>Navigation:</p>
-                <button className="hamburger" onClick={toggleMenu}>
-                    <span className="bar"></span>
-                    <span className="bar"></span>
-                    <span className="bar"></span>
-                </button>
-            </div>
-            <div className={`navItems ${isOpen ? 'open' : ''}`}>
-                <div className="navItem">
-                    <NavLink to={"/collection"}>Collection</NavLink>
-                </div>
-                <div className="navItem">
-                    <NavLink to={"/cooking"}>Cooking</NavLink>
-                </div>
-            </div>
-        </div>
-    )
+        <Navbar bg="light" expand="lg">
+            <Container>
+                <Navbar.Brand>Navigation</Navbar.Brand>
+                <Navbar.Toggle aria-controls="basic-navbar-nav" onClick={toggleMenu} />
+                <Navbar.Collapse id="basic-navbar-nav">
+                    <Nav className="mr-auto">
+                        <Nav.Link as={NavLink} to="/searching">Searching</Nav.Link>
+                        <Nav.Link as={NavLink} to="/collection">Collection</Nav.Link>
+                        <Nav.Link as={NavLink} to="/cooking">Cooking</Nav.Link>
+                    </Nav>
+                </Navbar.Collapse>
+            </Container>
+        </Navbar >
+    );
 }

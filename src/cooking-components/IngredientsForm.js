@@ -1,6 +1,20 @@
-import React from "react";
+import React, { useState, useEffect } from 'react';
+import listFilesAndUrls from "../firebase-code/storage-download";
 
 export function IngredientsForm({ ingredients, onChange, onSubmit }) {
+  const [ingredientImages, setIngredientImages] = useState([]);
+
+  useEffect(() => {
+    const fetchData = async () => {
+      const imgData = await listFilesAndUrls('img/Ingredients');
+      setIngredientImages([...imgData]);
+    };
+    fetchData();
+  }, []);
+
+  // Safely access image URLs
+  const getImageUrl = (index) => ingredientImages[index]?.url || '';
+
   return (
     <div className="cooking-form-container">
       <form onSubmit={onSubmit}>
@@ -10,7 +24,7 @@ export function IngredientsForm({ ingredients, onChange, onSubmit }) {
             value={ingredients.fancyApple}
             onChange={(e) => onChange('fancyApple', parseInt(e.target.value))}
           />
-          <img src="img/Ingredients/Fancy Apple.PNG" alt="Fancy Apple"></img>
+          <img src={getImageUrl(0)} alt="Fancy Apple"></img>
           <label>Fancy Apple</label>
         </div>
 
@@ -20,7 +34,7 @@ export function IngredientsForm({ ingredients, onChange, onSubmit }) {
             value={ingredients.fancyEgg}
             onChange={(e) => onChange('fancyEgg', parseInt(e.target.value))}
           />
-          <img src="img/Ingredients/Fancy Egg.PNG" alt="Fancy Egg"></img>
+          <img src={getImageUrl(1)} alt="Fancy Egg"></img>
           <label>Fancy Egg</label>
         </div>
 
@@ -30,7 +44,7 @@ export function IngredientsForm({ ingredients, onChange, onSubmit }) {
             value={ingredients.honey}
             onChange={(e) => onChange('honey', parseInt(e.target.value))}
           />
-          <img src="img/Ingredients/Honey.PNG" alt="Honey"></img>
+          <img src={getImageUrl(2)} alt="Honey"></img>
           <label>Honey</label>
         </div>
 
@@ -40,7 +54,7 @@ export function IngredientsForm({ ingredients, onChange, onSubmit }) {
             value={ingredients.moomooMilk}
             onChange={(e) => onChange('moomooMilk', parseInt(e.target.value))}
           />
-          <img src="img/Ingredients/Moomoo Milk.PNG" alt="Moomoo Milk"></img>
+          <img src={getImageUrl(3)} alt="Moomoo Milk"></img>
           <label>Moomoo Milk</label>
         </div>
 
@@ -50,7 +64,7 @@ export function IngredientsForm({ ingredients, onChange, onSubmit }) {
             value={ingredients.snoozyTomato}
             onChange={(e) => onChange('snoozyTomato', parseInt(e.target.value))}
           />
-          <img src="img/Ingredients/Snoozy Tomato.PNG" alt="Snoozy Tomato"></img>
+          <img src={getImageUrl(4)} alt="Snoozy Tomato"></img>
           <label>Snoozy Tomato</label>
         </div>
 
@@ -60,7 +74,7 @@ export function IngredientsForm({ ingredients, onChange, onSubmit }) {
             value={ingredients.soothingCacao}
             onChange={(e) => onChange('soothingCacao', parseInt(e.target.value))}
           />
-          <img src="img/Ingredients/Soothing Cacao.PNG" alt="Soothing Cacao"></img>
+          <img src={getImageUrl(5)} alt="Soothing Cacao"></img>
           <label>Soothing Cacao</label>
         </div>
 
@@ -70,7 +84,7 @@ export function IngredientsForm({ ingredients, onChange, onSubmit }) {
             value={ingredients.warmingGinger}
             onChange={(e) => onChange('warmingGinger', parseInt(e.target.value))}
           />
-          <img src="img/Ingredients/Warming Ginger.PNG" alt="Warming Ginger"></img>
+          <img src={getImageUrl(6)} alt="Warming Ginger"></img>
           <label>Warming Ginger</label>
         </div>
 

@@ -1,17 +1,76 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import BerriesSection from './BerriesSection';
 import SleepTypesSection from './SleepTypesSection';
 import { NavLink } from 'react-router-dom';
-//import the function from the realtime database module
-import { getDatabase } from 'firebase/database';
-
-// Get a reference to the database service
-const db = getDatabase();
+import { ref, onValue, set as firebaseSet } from "firebase/database";
+import listFilesAndUrls from "../firebase-code/storage-download";
+import { db } from "..";
 
 export function Form(props) {
   const [selectedBerries, setSelectedBerries] = useState([]);
   const [selectedSleepTypes, setSelectedSleepTypes] = useState([]);
   const [displayedData, setDisplayedData] = useState([]);
+  const [allBerries, setAllBerries] = useState([]);
+  const [allPokemonDB, setAllPokemonDB] = useState([]);
+  const [allPokemons, setAllPokemons] = useState([]);
+  const [allCollection, setAllCollection] = useState([]);
+
+  useEffect(() => {
+    const pokemonRef = ref(db, "pokemon");
+    const unregisterFunction = onValue(pokemonRef, (snapshot) => {
+      const data = snapshot.val();
+      const pokemonArray = Object.entries(data).map(([key, value]) => ({
+        name: key,
+        ...value
+      }));
+      setAllPokemonDB(pokemonArray);
+    });
+    //cleanup function for when component is removed
+    function cleanup() {
+      unregisterFunction(); //call the unregister function
+    }
+    return cleanup;
+  })
+
+  useEffect(() => {
+    const fetchData = async () => {
+      const pokemonImgData = await listFilesAndUrls('img/Pokemons');
+      const pokemonImagesArray = pokemonImgData.map(image => ({
+        pokemonName: image.name.slice(0, -4),
+        source: image.url
+      }));
+      const berriesImgData = await listFilesAndUrls('img/Berries');
+      const berriesImagesArray = berriesImgData.map(image => ({
+        berryName: image.name.slice(0, -4),
+        berryNameDash: image.name.slice(0, -4).replace(/\s+/g, '-').toLowerCase(),
+        source: image.url
+      }));
+      setAllBerries(berriesImagesArray);
+      setAllPokemons(pokemonImagesArray);
+    };
+    fetchData();
+  }, []);
+  
+  useEffect(() => {
+    const collectionRef = ref(db, "collection");
+    const unregisterFunction = onValue(collectionRef, (snapshot) => {
+        const data = snapshot.val();
+        if (data) {
+            const collectionArray = Object.entries(data).map(([key, value]) => ({
+                name: key,
+                ...value
+            }));
+            setAllCollection(collectionArray);
+        } else {
+            setAllCollection([]);
+        }
+    });
+    //cleanup function for when component is removed
+    function cleanup() {
+        unregisterFunction(); //call the unregister function
+    }
+    return cleanup;
+})
 
   const handleBerryChange = (berryName) => {
     const updatedBerries = [...selectedBerries];
@@ -42,14 +101,26 @@ export function Form(props) {
   const handleFilteredPokemon = (event) => {
     event.preventDefault();
     let newData;
+
+    const getImageUrl = (data) => data?.source || '';
+
+    const pokemonData = allPokemonDB.map(pokemon => ({
+      name: pokemon.name,
+      berry: pokemon.berry,
+      sleepType: pokemon.sleepType,
+      mainSkill: pokemon.mainSkill,
+      image: getImageUrl(allPokemons.find(image => image.pokemonName === pokemon.name)),
+      berryImg: getImageUrl(allBerries.find(image => image.berryName === pokemon.berry))
+    }));
+
     if (selectedBerries.length === 0 && selectedSleepTypes.length === 0) {
       newData = [];
     } else if (selectedBerries.length > 0 && selectedSleepTypes.length === 0) {
-      newData = props.pokemon.filter(pm => selectedBerries.includes(pm.berry));
+      newData = pokemonData.filter(pm => selectedBerries.includes(pm.berry));
     } else if (selectedBerries.length === 0 && selectedSleepTypes.length > 0) {
-      newData = props.pokemon.filter(pm => selectedSleepTypes.includes(pm.sleepType));
+      newData = pokemonData.filter(pm => selectedSleepTypes.includes(pm.sleepType));
     } else {
-      newData = props.pokemon.filter(pm =>
+      newData = pokemonData.filter(pm =>
         selectedBerries.includes(pm.berry) && selectedSleepTypes.includes(pm.sleepType)
       );
     }
@@ -74,12 +145,23 @@ export function Form(props) {
 
   const handleAddPokemon = (event, oneCard) => {
     event.preventDefault();
-    let currentPokemon = props.addedPokemon;
+    let currentPokemon = allCollection;
     if (currentPokemon.includes(oneCard)) {
       return;
     }
-    let newPokemon = [...currentPokemon, oneCard];
-    props.setAddedPokemon(newPokemon);
+
+    const newPokemonRef = ref(db, "collection/" + oneCard.name);
+    const newPokemonData = {
+      berry: oneCard.berry,
+      sleepType: oneCard.sleepType,
+      mainSkill: oneCard.mainSkill,
+      image: oneCard.image,
+      berryImg: oneCard.berryImg
+    };
+
+    firebaseSet(newPokemonRef, newPokemonData)
+      .then(() => console.log("data saved successfully!"))
+      .catch(err => console.log(err)); //log any errors for debugging
   };
 
   return (
@@ -93,7 +175,7 @@ export function Form(props) {
         </section>
 
         <form className="add-collection-form">
-          <BerriesSection berries={props.berries} selectedBerries={selectedBerries} onBerryChange={handleBerryChange} />
+          <BerriesSection berries={allBerries} selectedBerries={selectedBerries} onBerryChange={handleBerryChange} />
           <SleepTypesSection selectedSleepTypes={selectedSleepTypes} onSleepTypeChange={handleSleepTypeChange} />
 
           <div className="form-cards-container">

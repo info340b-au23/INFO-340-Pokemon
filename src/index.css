@@ -1,18 +1,24 @@
 * {
     box-sizing: border-box;
+    color: #444;
+}
+
+.marginLeft {
+    margin-left: 20px;
 }
 
 .linkButton {
     background-color: #555;
     color: #fff;
     padding: 10px 20px;
-    margin: 0 10px;
+    margin: 0 20px;
     border: none;
     cursor: pointer;
 }
 
 .info {
     display: flex;
+    margin-left: 20px;
 }
 
 .info-text {
@@ -25,15 +31,15 @@
 }
 
 .h1.navbar-open {
-    padding-top: 70px;
+    padding-top: 120px;
 }
 
 .h1.navbar-open-detail {
-    padding-top: 100px;
+    padding-top: 120px;
 }
 
 .search-searchButton {
-    margin-left: 5px;
+    margin-left: 10px;
 }
 
 .search-submitButton {
@@ -249,6 +255,23 @@ h6 {
 .collection-card p {
     font-family: 'Playpen Sans', cursive;
     color: white;
+}
+
+.delete-button {
+    margin-top: 10px;
+    padding: 10px 20px;
+    background-color: #8f2424;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 18px;
+    transition: background-color 0.3s;
+    text-align: center;
+}
+
+.delete-button:hover {
+    background-color: #2b4d71;
 }
 
 /* Cooking.css */
