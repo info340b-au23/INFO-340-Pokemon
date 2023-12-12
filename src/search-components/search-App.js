@@ -15,6 +15,7 @@ function App(props) {
     const [allBerries, setAllBerries] = useState([]);
     const [allPokemons, setAllPokemons] = useState([]);
     const [allPokemonDB, setAllPokemonDB] = useState([]);
+    const [isLoading, setIsLoading] = useState(true);
 
     const selectedBerries = filterBerry.filter(berry => berry.checked).map(berry => berry.name);
     const selectedTypes = filterType.filter(type => type.checked).map(type => type.id);
@@ -51,9 +52,14 @@ function App(props) {
             }));
             setAllBerries(berriesImagesArray);
             setAllPokemons(pokemonImagesArray);
+            setIsLoading(false);
         };
         fetchData();
     }, []);
+
+    if (isLoading) {
+        return <div className="loading">Working...</div>;  // Loading message
+    }
 
     const getImageUrl = (data) => data?.source || '';
 

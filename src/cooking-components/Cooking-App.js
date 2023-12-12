@@ -20,14 +20,21 @@ function App() {
 
   const [panURL, setPanURL] = useState(null);
 
+  const [isLoading, setIsLoading] = useState(true);
+
   useEffect(() => {
     const fetchData = async () => {
       const imgData = await listFilesAndUrls('img/Pan');
       const url = imgData[0].url;
       setPanURL(url);
+      setIsLoading(false);
     };
     fetchData();
   }, []);
+
+  if (isLoading) {
+    return <div className="loading">Working...</div>;  // Loading message
+  }
 
   const handleIngredientChange = (ingredient, value) => {
     setIngredients(prevIngredients => ({
@@ -42,7 +49,7 @@ function App() {
     console.log("Dish determined:", dish);
     setResult(dish);
   };
-  
+
 
   const determineDish = (ingredients) => {
     const { fancyApple, fancyEgg, honey, moomooMilk, snoozyTomato, soothingCacao, warmingGinger } = ingredients;

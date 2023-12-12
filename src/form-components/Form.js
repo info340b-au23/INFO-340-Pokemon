@@ -14,6 +14,7 @@ export function Form(props) {
   const [allPokemonDB, setAllPokemonDB] = useState([]);
   const [allPokemons, setAllPokemons] = useState([]);
   const [allCollection, setAllCollection] = useState([]);
+  const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
     const pokemonRef = ref(db, "pokemon");
@@ -47,30 +48,35 @@ export function Form(props) {
       }));
       setAllBerries(berriesImagesArray);
       setAllPokemons(pokemonImagesArray);
+      setIsLoading(false);
     };
     fetchData();
   }, []);
-  
+
   useEffect(() => {
     const collectionRef = ref(db, "collection");
     const unregisterFunction = onValue(collectionRef, (snapshot) => {
-        const data = snapshot.val();
-        if (data) {
-            const collectionArray = Object.entries(data).map(([key, value]) => ({
-                name: key,
-                ...value
-            }));
-            setAllCollection(collectionArray);
-        } else {
-            setAllCollection([]);
-        }
+      const data = snapshot.val();
+      if (data) {
+        const collectionArray = Object.entries(data).map(([key, value]) => ({
+          name: key,
+          ...value
+        }));
+        setAllCollection(collectionArray);
+      } else {
+        setAllCollection([]);
+      }
     });
     //cleanup function for when component is removed
     function cleanup() {
-        unregisterFunction(); //call the unregister function
+      unregisterFunction(); //call the unregister function
     }
     return cleanup;
-})
+  })
+  
+  if (isLoading) {
+    return <div className="loading">Working...</div>;  // Loading message
+  }
 
   const handleBerryChange = (berryName) => {
     const updatedBerries = [...selectedBerries];

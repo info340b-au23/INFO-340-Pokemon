@@ -1,16 +1,74 @@
-import React, {useState} from 'react';
+import React, { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
+import { ref, onValue } from "firebase/database";
+import listFilesAndUrls from "../firebase-code/storage-download";
+import { db } from "..";
 import { BNavbar } from './Navbar';
 
 import _ from 'lodash';
 
-import Pokemon from './../data/pokemon.json';
-
 export default function PokemonDetail(props) {
     const [isOpen, setIsOpen] = useState(false);
+    const [allBerries, setAllBerries] = useState([]);
+    const [allPokemons, setAllPokemons] = useState([]);
+    const [allPokemonDB, setAllPokemonDB] = useState([]);
+    const [isLoading, setIsLoading] = useState(true);
 
     const { pName: pNameString } = useParams();
-    let pokemon = _.find(Pokemon, { name: pNameString });
+
+    useEffect(() => {
+        const pokemonRef = ref(db, "pokemon");
+        const unregisterFunction = onValue(pokemonRef, (snapshot) => {
+            const data = snapshot.val();
+            const pokemonArray = Object.entries(data).map(([key, value]) => ({
+                name: key,
+                ...value
+            }));
+            setAllPokemonDB(pokemonArray);
+        });
+        //cleanup function for when component is removed
+        function cleanup() {
+            unregisterFunction(); //call the unregister function
+        }
+        return cleanup;
+    })
+
+    useEffect(() => {
+        const fetchData = async () => {
+            const pokemonImgData = await listFilesAndUrls('img/Pokemons');
+            const pokemonImagesArray = pokemonImgData.map(image => ({
+                pokemonName: image.name.slice(0, -4),
+                source: image.url
+            }));
+            const berriesImgData = await listFilesAndUrls('img/Berries');
+            const berriesImagesArray = berriesImgData.map(image => ({
+                berryName: image.name.slice(0, -4),
+                berryNameDash: image.name.slice(0, -4).replace(/\s+/g, '-').toLowerCase(),
+                source: image.url
+            }));
+            setAllBerries(berriesImagesArray);
+            setAllPokemons(pokemonImagesArray);
+            setIsLoading(false);
+        };
+        fetchData();
+    }, []);
+
+    if (isLoading) {
+        return <div className="loading">Working...</div>;  // Loading message
+    }
+
+    const getImageUrl = (data) => data?.source || '';
+
+    const pokemonData = allPokemonDB.map(pokemon => ({
+        name: pokemon.name,
+        berry: pokemon.berry,
+        sleepType: pokemon.sleepType,
+        mainSkill: pokemon.mainSkill,
+        image: getImageUrl(allPokemons.find(image => image.pokemonName === pokemon.name)),
+        berryImg: getImageUrl(allBerries.find(image => image.berryName === pokemon.berry))
+    }));
+
+    let pokemon = _.find(pokemonData, { name: pNameString });
 
     const applyMenu = (isOpen) => {
         setIsOpen(isOpen)
@@ -31,7 +89,7 @@ export default function PokemonDetail(props) {
             </nav>
             <H1 isOpen={isOpen} />
             <div className='info'>
-                <img className='search-card' src={`/${pokemon.image}`} alt={pokemon.name}></img>
+                <img className='search-card' src={pokemon.image} alt={pokemon.name}></img>
                 <div className='info-text'>
                     <p>Berry: {pokemon.berry}</p>
                     <p>Sleep Type: {pokemon.sleepType}</p>
