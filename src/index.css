@@ -1,18 +1,24 @@
 * {
     box-sizing: border-box;
+    color: #444;
+}
+
+.marginLeft {
+    margin-left: 20px;
 }
 
 .linkButton {
     background-color: #555;
     color: #fff;
     padding: 10px 20px;
-    margin: 0 10px;
+    margin: 0 20px;
     border: none;
     cursor: pointer;
 }
 
 .info {
     display: flex;
+    margin-left: 20px;
 }
 
 .info-text {
@@ -25,15 +31,15 @@
 }
 
 .h1.navbar-open {
-    padding-top: 70px;
+    padding-top: 120px;
 }
 
 .h1.navbar-open-detail {
-    padding-top: 100px;
+    padding-top: 120px;
 }
 
 .search-searchButton {
-    margin-left: 5px;
+    margin-left: 10px;
 }
 
 .search-submitButton {

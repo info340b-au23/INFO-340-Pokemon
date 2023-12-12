@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Navbar } from './Navbar';
+import { BNavbar } from './../search-components/Navbar';
 import { NavLink } from 'react-router-dom';
 
 function App(props) {
@@ -7,7 +7,7 @@ function App(props) {
 
     const H1 = ({ isOpen }) => {
         return (
-            <div>
+            <div className='marginLeft'>
                 <h1 className={`h1 ${isOpen ? 'navbar-open' : ''}`}>My Collection</h1>
             </div>
         );
@@ -30,13 +30,13 @@ function App(props) {
         <div>
             <header>
                 <nav>
-                    <Navbar applyMenuCallBack={applyMenu} />
+                    <BNavbar applyMenuCallBack={applyMenu} />
                 </nav>
                 <H1 isOpen={isOpen} />
             </header>
             <main>
                 <section className="button-container">
-                    <h2>Click the button below to navigate to the pop-up form</h2>
+                    <h2 className='marginLeft'>Click the button below to navigate to the pop-up form</h2>
                     <NavLink to={"/form"} className="linkButton">Add Pokémon</NavLink>
                 </section>
 
@@ -44,7 +44,7 @@ function App(props) {
                     {card}
                 </div>
             </main>
-            <footer>
+            <footer className="marginLeft">
                 <p>This web application was created by us using our own two hands.</p>
                 <address>Contact Noor Aamir at <a href="mailto:naamir@uw.edu">naamir@uw.edu</a>, Ling (Evelyn) Lin at <a href="mailto:lingl3@uw.edu">lingl3@uw.edu</a>, Jessie Ren at <a href="mailto:siyiren@uw.edu">siyiren@uw.edu</a>, and Yi Shi at <a href="mailto:yshi6@uw.edu">yshi6@uw.edu</a>.</address>
                 <p>&copy; 2023 INFO 340 Team B6.</p>

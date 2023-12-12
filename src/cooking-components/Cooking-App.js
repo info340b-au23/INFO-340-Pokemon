@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import IngredientsForm from './IngredientsForm';
 import ResultDisplay from './ResultDisplay';
-import { Navbar } from './Navbar';
+import { BNavbar } from './../search-components/Navbar';
 
 function App() {
   const [ingredients, setIngredients] = useState({
@@ -63,7 +63,7 @@ function App() {
     <div className="App">
       <header className="cooking-container">
         <nav>
-          <Navbar applyMenuCallBack={applyMenu} />
+          <BNavbar applyMenuCallBack={applyMenu} />
         </nav>
         <H1 isOpen={isOpen} />
       </header>

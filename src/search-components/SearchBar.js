@@ -12,7 +12,7 @@ export function SearchBar(props) {
     }
 
     return (
-        <section>
+        <section className="marginLeft">
             <form>
                 <input type="text" placeholder="Search Pokemon..." onChange={handleSearchChange}></input>
                 <button type="button" className="search-searchButton" onClick={handleClick}>Search</button>
