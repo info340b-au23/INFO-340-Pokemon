@@ -2,6 +2,11 @@ import React, { useState } from 'react';
 import BerriesSection from './BerriesSection';
 import SleepTypesSection from './SleepTypesSection';
 import { NavLink } from 'react-router-dom';
+//import the function from the realtime database module
+import { getDatabase } from 'firebase/database';
+
+// Get a reference to the database service
+const db = getDatabase();
 
 export function Form(props) {
   const [selectedBerries, setSelectedBerries] = useState([]);
