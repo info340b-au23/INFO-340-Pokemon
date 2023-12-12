@@ -15,7 +15,7 @@ export default function App(props) {
             <Route path='pokemon/:pName' element={<PokemonDetail />} />
             <Route path="collection" element={<Collection pokemon={pokemon} />} />
             <Route path="cooking" element={<Cooking />} />
-            <Route path='form' element={<Form berries={berry} />} />
+            <Route path='form' element={<Form pokemon={pokemon} berries={berry} />} />
             <Route path="*" element={<Navigate to="/searching" replace />} />
         </Routes>
     )

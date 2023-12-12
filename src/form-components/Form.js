@@ -7,6 +7,7 @@ import { NavLink } from 'react-router-dom';
 export function Form(props) {
   const [selectedBerries, setSelectedBerries] = useState([]);
   const [selectedSleepTypes, setSelectedSleepTypes] = useState([]);
+  const [displayedData, setDisplayedData] = useState([]);
 
   const handleBerryChange = (berryName) => {
     const updatedBerries = [...selectedBerries];
@@ -34,6 +35,39 @@ export function Form(props) {
     setSelectedSleepTypes(updatedSleepTypes);
   };
 
+  const handleFilteredPokemon = (event) => {
+    event.preventDefault();
+    let newData;
+    if (selectedBerries.length === 0 && selectedSleepTypes.length === 0) {
+      newData = [];
+    } else if (selectedBerries.length > 0 && selectedSleepTypes.length === 0) {
+      newData = props.pokemon.filter(pm => selectedBerries.includes(pm.berry));
+    } else if (selectedBerries.length === 0 && selectedSleepTypes.length > 0) {
+      newData = props.pokemon.filter(pm => selectedSleepTypes.includes(pm.sleepType));
+    } else {
+      newData = props.pokemon.filter(pm =>
+        selectedBerries.includes(pm.berry) && selectedSleepTypes.includes(pm.sleepType)
+      );
+    }
+    if (newData && newData.length > 0) {
+      setDisplayedData(newData);
+    } else {
+      setDisplayedData([]);
+    }
+  }
+
+  const displayedCard = displayedData.map((oneCard) => {
+    return (
+      <div className="form-card" key={oneCard.name}>
+        <img src={oneCard.image} alt={oneCard.name} />
+        <p>{oneCard.name}</p>
+        <button className="add-button">
+          Add
+        </button>
+      </div>
+    )
+  })
+
   const handleAddPokemon = () => {
     const pokemonData = {
       name: 'Eevee',
@@ -41,12 +75,12 @@ export function Form(props) {
       sleepTypes: selectedSleepTypes,
     };
 
-    
+
     const jsonString = JSON.stringify(pokemonData, null, 2);
     const blob = new Blob([jsonString], { type: 'application/json' });
     saveAs(blob, 'Pokemon.json');
 
-  
+
     setSelectedBerries([]);
     setSelectedSleepTypes([]);
   };
@@ -65,16 +99,12 @@ export function Form(props) {
           <BerriesSection berries={props.berries} selectedBerries={selectedBerries} onBerryChange={handleBerryChange} />
           <SleepTypesSection selectedSleepTypes={selectedSleepTypes} onSleepTypeChange={handleSleepTypeChange} />
 
-          <div className="form-card">
-            <img src="img/Eevee.jpg" alt="Eevee" />
-            <p>Eevee</p>
-            <button className="add-button" onClick={handleAddPokemon}>
-              Add
-            </button>
+          <div className="form-cards-container">
+            {displayedCard}
           </div>
 
-          <div className="form-submit-button">
-            <input type="submit" value="Submit" />
+          <div className="form-submit">
+            <button id="submitButton" type="submit" className="form-submit-button" onClick={handleFilteredPokemon}>Submit</button>
           </div>
         </form>
       </main>
@@ -84,7 +114,7 @@ export function Form(props) {
         <p>&copy; 2023 INFO 340 Team B6.</p>
       </footer>
     </div>
-  );
-}
+  )
+};
 
 export default Form;
