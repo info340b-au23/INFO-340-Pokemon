@@ -1,10 +1,10 @@
 import React from 'react';
 import { Routes, Route, Navigate } from 'react-router-dom';
-import Searching from './search-App';
-import Collection from './../collection-components/collection-App';
-import Cooking from './../cooking-components/Cooking-App';
-import Form from './../form-components/Form';
-import PokemonDetail from './PokemonDetail';
+import Searching from './search-app';
+import Collection from '../collection-components/collection-app.js';
+import Cooking from '../cooking-components/cooking-app.js';
+import Form from '../collection-components/collection-form.js';
+import PokemonDetail from './pokemon-detail';
 
 export default function App(props) {
     return (

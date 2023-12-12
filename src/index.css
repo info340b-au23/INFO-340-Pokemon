@@ -187,7 +187,8 @@ h6 {
     box-shadow: 0 1px 3px rgba(0, 0, 0, 0.16), 0 1px 3px rgba(0, 0, 0, 0.23);
 }
 
-.search-filter-container h2, h3 {
+.search-filter-container h2,
+h3 {
     margin: 2px;
 }
 
@@ -305,6 +306,7 @@ h6 {
     flex-direction: column;
     justify-content: center;
     margin-bottom: 30px;
+    text-align: center;
 }
 
 .cooking-pan-container img {
@@ -339,11 +341,11 @@ h6 {
 
 .ingredient-item input[type="number"] {
     transition: transform 0.2s ease-in-out;
-  }
-  
-  .ingredient-item input[type="number"]:focus {
+}
+
+.ingredient-item input[type="number"]:focus {
     transform: scale(1.1);
-  }  
+}
 
 caption {
     font-size: 1.2em;

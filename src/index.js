@@ -25,7 +25,7 @@ const firebaseConfig = {
 const firebaseApp = initializeApp(firebaseConfig);
 
 // Initialize Firebase Storage
-const firebaseStorage  = getStorage(firebaseApp);
+const firebaseStorage = getStorage(firebaseApp);
 
 // Initialize Firebase Database
 const db = getDatabase();
@@ -37,4 +37,4 @@ root.render(
     </BrowserRouter>
 );
 
-export {firebaseStorage, db};
+export { firebaseStorage, db };

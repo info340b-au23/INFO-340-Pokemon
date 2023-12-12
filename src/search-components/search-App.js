@@ -1,11 +1,12 @@
 import React, { useState, useEffect } from 'react';
 import { ref, onValue } from "firebase/database";
-import listFilesAndUrls from "../firebase-code/storage-download";
+import listFilesAndUrls from "../utils/storage-download";
 import { db } from "..";
-import { BNavbar } from './Navbar';
-import { SearchBar } from './SearchBar';
-import { CardList } from './CardList';
-import { FilterBar } from './FilterBar';
+import { BNavbar } from './navbar';
+import { SearchBar } from './search-bar';
+import { CardList } from './cardlist';
+import { FilterBar } from './filter-bar';
+import { formatString } from '../utils/string-utils';
 
 function App(props) {
     const [filterBerry, setFilterBerry] = useState([]);
@@ -17,7 +18,7 @@ function App(props) {
     const [allPokemonDB, setAllPokemonDB] = useState([]);
     const [isLoading, setIsLoading] = useState(true);
 
-    const selectedBerries = filterBerry.filter((berry) => berry.checked).map((berry) => berry.name);
+    const selectedBerries = filterBerry.filter((berry) => berry.checked).map((berry) => berry.name.toLowerCase());
     const selectedTypes = filterType.filter((type) => type.checked).map((type) => type.id);
 
     useEffect(() => {
@@ -39,15 +40,15 @@ function App(props) {
 
     useEffect(() => {
         const fetchData = async () => {
-            const pokemonImgData = await listFilesAndUrls('img/Pokemons');
+            const pokemonImgData = await listFilesAndUrls('img/pokemons');
             const pokemonImagesArray = pokemonImgData.map((image) => ({
-                pokemonName: image.name.slice(0, -4),
+                pokemonName: formatString(image.name.slice(0, -4)),
                 source: image.url
             }));
-            const berriesImgData = await listFilesAndUrls('img/Berries');
+            const berriesImgData = await listFilesAndUrls('img/berries');
             const berriesImagesArray = berriesImgData.map((image) => ({
-                berryName: image.name.slice(0, -4),
-                berryNameDash: image.name.slice(0, -4).replace(/\s+/g, '-').toLowerCase(),
+                berryName: formatString(image.name.slice(0, -4)),
+                berryNameDash: image.name.slice(0, -4),
                 source: image.url
             }));
             setAllBerries(berriesImagesArray);
@@ -61,7 +62,9 @@ function App(props) {
         return <div className="loading">Working...</div>;  // Loading message
     }
 
-    const getImageUrl = (data) => data?.source || '';
+    function getImageUrl(data) {
+        return data?.source || ''
+    }
 
     const pokemonData = allPokemonDB.map((pokemon) => ({
         name: pokemon.name,
@@ -76,22 +79,22 @@ function App(props) {
     if (selectedBerries.length === 0 && selectedTypes.length === 0 && searchPm === '') {
         displayedData = pokemonData;
     } else if (selectedBerries.length > 0 && selectedTypes.length === 0 && searchPm === '') {
-        displayedData = pokemonData.filter((pm) => selectedBerries.includes(pm.berry));
+        displayedData = pokemonData.filter((pm) => selectedBerries.includes(pm.berry.toLowerCase()));
     } else if (selectedBerries.length === 0 && selectedTypes.length > 0 && searchPm === '') {
         displayedData = pokemonData.filter((pm) => selectedTypes.includes(pm.sleepType));
     } else if (selectedBerries.length > 0 && selectedTypes.length > 0 && searchPm === '') {
         displayedData = pokemonData.filter((pm) =>
-            selectedBerries.includes(pm.berry) && selectedTypes.includes(pm.sleepType)
+            selectedBerries.includes(pm.berry.toLowerCase()) && selectedTypes.includes(pm.sleepType)
         );
     } else if (selectedBerries.length === 0 && selectedTypes.length === 0 && searchPm !== '') {
         displayedData = pokemonData.filter((pm) => pm.name.toLowerCase().includes(searchPm.toLowerCase()));
     } else if (selectedBerries.length > 0 && selectedTypes.length === 0 && searchPm !== '') {
-        displayedData = pokemonData.filter((pm) => selectedBerries.includes(pm.berry) && pm.name.toLowerCase().includes(searchPm.toLowerCase()));
+        displayedData = pokemonData.filter((pm) => selectedBerries.includes(pm.berry.toLowerCase()) && pm.name.toLowerCase().includes(searchPm.toLowerCase()));
     } else if (selectedBerries.length === 0 && selectedTypes.length > 0 && searchPm !== '') {
         displayedData = pokemonData.filter((pm) => selectedTypes.includes(pm.sleepType) && pm.name.toLowerCase().includes(searchPm.toLowerCase()));
     } else {
         displayedData = pokemonData.filter((pm) =>
-            selectedBerries.includes(pm.berry) && selectedTypes.includes(pm.sleepType) && pm.name.toLowerCase().includes(searchPm.toLowerCase())
+            selectedBerries.includes(pm.berry.tolowercase()) && selectedTypes.includes(pm.sleepType) && pm.name.toLowerCase().includes(searchPm.toLowerCase())
         );
     }
 

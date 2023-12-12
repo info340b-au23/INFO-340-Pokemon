@@ -6,11 +6,11 @@ This repository contains code for an interactive information web app, created fo
 
 Noor Aamir (naamir@)
 
-Ling (Evelyn) Lin (@lingl3)
+Ling (Evelyn) Lin (lingl3@)
 
-Jessie Ren (@siyiren)
+Jessie Ren (siyiren@)
 
-Yi Shi (@yshi6)
+Yi Shi (yshi6@)
 
 ## Problem Description
 
@@ -31,7 +31,7 @@ The Pokémon Sleep web app offers a dynamic and interactive experience with thre
 
 1. Users can actively search and filter Pokémon based on criteria like type, abilities, and more, utilizing interactive forms for a user-driven exploration. This feature is at our main page.
 
-2. After logging in, users can add captured Pokémon to their collection through a comprehensive form, enabling them to curate and manage their Pokémon collection interactively.
+2. Users can add and delete captured Pokémon to their collection through a comprehensive form, enabling them to curate and manage their Pokémon collection interactively.
 
 3. The app includes a creative cooking simulator, where users can experiment with virtual dishes by selecting ingredients from their collection, providing an engaging and imaginative way to interact with Snorlax and other Pokémon.
 

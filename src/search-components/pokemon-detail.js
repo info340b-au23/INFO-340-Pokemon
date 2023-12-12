@@ -1,9 +1,10 @@
 import React, { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 import { ref, onValue } from "firebase/database";
-import listFilesAndUrls from "../firebase-code/storage-download";
+import listFilesAndUrls from "../utils/storage-download";
 import { db } from "..";
-import { BNavbar } from './Navbar';
+import { BNavbar } from './navbar';
+import { formatString } from '../utils/string-utils';
 
 import _ from 'lodash';
 
@@ -35,15 +36,15 @@ export default function PokemonDetail(props) {
 
     useEffect(() => {
         const fetchData = async () => {
-            const pokemonImgData = await listFilesAndUrls('img/Pokemons');
+            const pokemonImgData = await listFilesAndUrls('img/pokemons');
             const pokemonImagesArray = pokemonImgData.map((image) => ({
-                pokemonName: image.name.slice(0, -4),
+                pokemonName: formatString(image.name.slice(0, -4)),
                 source: image.url
             }));
-            const berriesImgData = await listFilesAndUrls('img/Berries');
+            const berriesImgData = await listFilesAndUrls('img/berries');
             const berriesImagesArray = berriesImgData.map((image) => ({
-                berryName: image.name.slice(0, -4),
-                berryNameDash: image.name.slice(0, -4).replace(/\s+/g, '-').toLowerCase(),
+                berryName: formatString(image.name.slice(0, -4)),
+                berryNameDash: image.name.slice(0, -4),
                 source: image.url
             }));
             setAllBerries(berriesImagesArray);
@@ -57,7 +58,9 @@ export default function PokemonDetail(props) {
         return <div className="loading">Working...</div>;  // Loading message
     }
 
-    const getImageUrl = (data) => data?.source || '';
+    function getImageUrl(data) {
+        return data?.source || '';
+    }
 
     const pokemonData = allPokemonDB.map((pokemon) => ({
         name: pokemon.name,
@@ -81,7 +84,7 @@ export default function PokemonDetail(props) {
             </div>
         );
     }
-    
+
     return (
         <div>
             <nav>

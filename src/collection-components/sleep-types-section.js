@@ -3,7 +3,7 @@ import React from 'react';
 function SleepTypesSection(props) {
   const { onSleepTypeChange, selectedSleepTypes } = props;
 
-  const sleepTypes = ['Dozing', 'Snoozing', 'Slumbering']; 
+  const sleepTypes = ['Dozing', 'Snoozing', 'Slumbering'];
 
   const handleSleepTypeChange = (sleepType) => {
     onSleepTypeChange(sleepType);
@@ -13,6 +13,7 @@ function SleepTypesSection(props) {
     <div className="form-filter-card" key={type.toLowerCase()}>
       <input
         type="checkbox"
+        id={type.toLowerCase()}
         aria-describedby={`${type.toLowerCase()}-checkbox`}
         onChange={() => handleSleepTypeChange(type)}
         checked={selectedSleepTypes.includes(type)}

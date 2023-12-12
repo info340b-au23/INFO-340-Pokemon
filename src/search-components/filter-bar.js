@@ -37,8 +37,9 @@ export function FilterBar({ berries, types, applyFilterCallback }) {
     const berry = berries.map((pm) => {
         return (
             <div className="filter-card" key={pm.berry}>
-                <input name={pm.berry} type="checkbox" value="" onChange={handleBerryChange}></input>
+                <input id={pm.berry} name={pm.berry} type="checkbox" value="" onChange={handleBerryChange}></input>
                 <p><img src={pm.berryImg} alt={pm.berry}></img></p>
+                <label htmlFor={pm.berry}>{pm.berry}</label>
             </div>
         )
     })
@@ -61,7 +62,7 @@ export function FilterBar({ berries, types, applyFilterCallback }) {
                 <h3>by sleep type</h3>
                 {sleepType}
                 <div className="filter-submit-button">
-                    <button id="submitButton" type="submit" className="search-submitButton" onClick={handleClick}>Apply Filter</button>
+                    <button id="submitButton" type="submit" className="search-submitButton" aria-label="submit-filter" onClick={handleClick}>Apply Filter</button>
                 </div>
             </section>
         </div>

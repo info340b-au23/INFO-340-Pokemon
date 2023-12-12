@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { BNavbar } from './../search-components/Navbar';
+import { BNavbar } from '../search-components/navbar';
 import { NavLink } from 'react-router-dom';
 import { ref, onValue, remove } from "firebase/database";
 import { db } from "..";
@@ -32,7 +32,7 @@ function App(props) {
     const H1 = ({ isOpen }) => {
         return (
             <div className='marginLeft'>
-                <h1 className={`h1 ${isOpen ? 'navbar-open' : ''}`}>My Collection</h1>
+                <h1 className={`h1 ${isOpen ? 'navbar-open' : ''}`}>Collection</h1>
             </div>
         );
     }
@@ -44,7 +44,7 @@ function App(props) {
     const handleDeletePokemon = (event, oneCard) => {
         event.preventDefault();
 
-        const deleteRef = ref(db, "collection/"+oneCard.name);
+        const deleteRef = ref(db, "collection/" + oneCard.name);
 
         remove(deleteRef)
             .then(() => console.log("data removed successfully!"))
@@ -56,7 +56,7 @@ function App(props) {
             <div className="collection-card" key={oneP.name}>
                 <img src={oneP.image} alt={oneP.name}></img>
                 <NavLink to={`/collection/${oneP.name}`} className="cardText">{oneP.name}</NavLink>
-                <button className="delete-button" onClick={(event) => handleDeletePokemon(event, oneP)}>
+                <button aria-label="delete-current-pokemon" className="delete-button" onClick={(event) => handleDeletePokemon(event, oneP)}>
                     Delete
                 </button>
             </div>
@@ -76,6 +76,8 @@ function App(props) {
                     <h2 className='marginLeft'>Click the button below to navigate to the pop-up form</h2>
                     <NavLink to={"/form"} className="linkButton">Add Pokémon</NavLink>
                 </section>
+
+                <h2 className='marginLeft'>My Collection</h2>
 
                 <div className="collection-cards-container">
                     {card}

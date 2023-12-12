@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from 'react';
-import IngredientsForm from './IngredientsForm';
-import ResultDisplay from './ResultDisplay';
-import { BNavbar } from './../search-components/Navbar';
-import listFilesAndUrls from "../firebase-code/storage-download";
+import IngredientsForm from './ingredients-form';
+import ResultDisplay from './result-display';
+import { BNavbar } from '../search-components/navbar';
+import listFilesAndUrls from "../utils/storage-download";
 
 function App() {
   const [ingredients, setIngredients] = useState({
@@ -24,7 +24,7 @@ function App() {
 
   useEffect(() => {
     const fetchData = async () => {
-      const imgData = await listFilesAndUrls('img/Pan');
+      const imgData = await listFilesAndUrls('img/pan');
       const url = imgData[0].url;
       setPanURL(url);
       setIsLoading(false);
@@ -54,14 +54,14 @@ function App() {
   const determineDish = (ingredients) => {
     const { fancyApple, fancyEgg, honey, moomooMilk, snoozyTomato, soothingCacao, warmingGinger } = ingredients;
 
-    if (honey === 9 && soothingCacao === 8 && moomooMilk === 7) return 'Sweet Scent Chocolate Cake';
-    if (fancyApple === 11 && moomooMilk === 9 && honey === 7 && soothingCacao === 8) return 'Lovely Kiss Smoothie';
-    if (honey === 20 && fancyEgg === 15 && moomooMilk === 10 && fancyApple === 10) return 'Jigglypuff\'s Fruity Flan';
-    if (honey === 14 && warmingGinger === 12 && soothingCacao === 5 && fancyEgg === 4) return 'Steadfast Ginger Cookies';
-    if (snoozyTomato === 9 && fancyApple === 7) return 'Stalwart Vegetable Juice';
-    if (warmingGinger === 9 && fancyApple === 7) return 'Ember Ginger Tea';
-    if (moomooMilk === 7) return 'Warm Moomoo Milk';
-    if (honey === 9) return 'Craft Soda Pop';
+    if (honey === 9 && soothingCacao === 8 && moomooMilk === 7) return 'sweet-scent-chocolate-cake';
+    if (fancyApple === 11 && moomooMilk === 9 && honey === 7 && soothingCacao === 8) return 'lovely-kiss-smoothie';
+    if (honey === 20 && fancyEgg === 15 && moomooMilk === 10 && fancyApple === 10) return 'jigglypuff\'s-fruity-flan';
+    if (honey === 14 && warmingGinger === 12 && soothingCacao === 5 && fancyEgg === 4) return 'steadfast-ginger-cookies';
+    if (snoozyTomato === 9 && fancyApple === 7) return 'stalwart-vegetable-juice';
+    if (warmingGinger === 9 && fancyApple === 7) return 'ember-ginger-tea';
+    if (moomooMilk === 7) return 'warm-moomoo-milk';
+    if (honey === 9) return 'craft-soda-pop';
 
     return null;
   };
@@ -89,10 +89,11 @@ function App() {
       <main className="cooking-container">
 
         <section className="cooking-pan-container">
-          <img src={panURL} alt="PAN"></img>
-          <h1>Let's select for cooking</h1>
+          <img src={panURL} alt="PAN" aria-label="pan-schematic-diagram"></img>
+          <h2>Let's select for cooking</h2>
         </section>
         <IngredientsForm ingredients={ingredients} onChange={handleIngredientChange} onSubmit={handleSubmit} />
+        <h2>If you make it, the recipe will be shown!</h2>
         {result && <ResultDisplay result={result} />}
       </main>
       <footer className="cooking-container">

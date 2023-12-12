@@ -1,10 +1,11 @@
 import React, { useState, useEffect } from 'react';
-import BerriesSection from './BerriesSection';
-import SleepTypesSection from './SleepTypesSection';
+import BerriesSection from './berries-section';
+import SleepTypesSection from './sleep-types-section';
 import { NavLink } from 'react-router-dom';
 import { ref, onValue, set as firebaseSet } from "firebase/database";
-import listFilesAndUrls from "../firebase-code/storage-download";
+import listFilesAndUrls from "../utils/storage-download";
 import { db } from "..";
+import { formatString } from '../utils/string-utils';
 
 export function Form(props) {
   const [selectedBerries, setSelectedBerries] = useState([]);
@@ -35,15 +36,15 @@ export function Form(props) {
 
   useEffect(() => {
     const fetchData = async () => {
-      const pokemonImgData = await listFilesAndUrls('img/Pokemons');
+      const pokemonImgData = await listFilesAndUrls('img/pokemons');
       const pokemonImagesArray = pokemonImgData.map((image) => ({
-        pokemonName: image.name.slice(0, -4),
+        pokemonName: formatString(image.name.slice(0, -4)),
         source: image.url
       }));
-      const berriesImgData = await listFilesAndUrls('img/Berries');
+      const berriesImgData = await listFilesAndUrls('img/berries');
       const berriesImagesArray = berriesImgData.map((image) => ({
-        berryName: image.name.slice(0, -4),
-        berryNameDash: image.name.slice(0, -4).replace(/\s+/g, '-').toLowerCase(),
+        berryName: formatString(image.name.slice(0, -4)),
+        berryNameDash: image.name.slice(0, -4),
         source: image.url
       }));
       setAllBerries(berriesImagesArray);
@@ -73,7 +74,7 @@ export function Form(props) {
     }
     return cleanup;
   })
-  
+
   if (isLoading) {
     return <div className="loading">Working...</div>;  // Loading message
   }
@@ -108,7 +109,9 @@ export function Form(props) {
     event.preventDefault();
     let newData;
 
-    const getImageUrl = (data) => data?.source || '';
+    function getImageUrl(data) {
+      return data?.source || '';
+    };
 
     const pokemonData = allPokemonDB.map((pokemon) => ({
       name: pokemon.name,
@@ -138,11 +141,12 @@ export function Form(props) {
   }
 
   const displayedCard = displayedData.map((oneCard) => {
+    let formattedName = formatString(oneCard.name);
     return (
       <div className="form-card" key={oneCard.name}>
-        <img src={oneCard.image} alt={oneCard.name} />
-        <p>{oneCard.name}</p>
-        <button className="add-button" onClick={(event) => handleAddPokemon(event, oneCard)}>
+        <img src={oneCard.image} alt={formattedName} />
+        <p>{formattedName}</p>
+        <button aria-label="add-current-pokemon" className="add-button" onClick={(event) => handleAddPokemon(event, oneCard)}>
           Add
         </button>
       </div>
@@ -189,7 +193,7 @@ export function Form(props) {
           </div>
 
           <div className="form-submit">
-            <button id="submitButton" type="submit" className="form-submit-button" onClick={handleFilteredPokemon}>Submit</button>
+            <button id="submitButton" type="submit" className="form-submit-button" aria-label="submit-request" onClick={handleFilteredPokemon}>Submit</button>
           </div>
         </form>
       </main>
