@@ -36,12 +36,12 @@ export function Form(props) {
   useEffect(() => {
     const fetchData = async () => {
       const pokemonImgData = await listFilesAndUrls('img/Pokemons');
-      const pokemonImagesArray = pokemonImgData.map(image => ({
+      const pokemonImagesArray = pokemonImgData.map((image) => ({
         pokemonName: image.name.slice(0, -4),
         source: image.url
       }));
       const berriesImgData = await listFilesAndUrls('img/Berries');
-      const berriesImagesArray = berriesImgData.map(image => ({
+      const berriesImagesArray = berriesImgData.map((image) => ({
         berryName: image.name.slice(0, -4),
         berryNameDash: image.name.slice(0, -4).replace(/\s+/g, '-').toLowerCase(),
         source: image.url
@@ -110,23 +110,23 @@ export function Form(props) {
 
     const getImageUrl = (data) => data?.source || '';
 
-    const pokemonData = allPokemonDB.map(pokemon => ({
+    const pokemonData = allPokemonDB.map((pokemon) => ({
       name: pokemon.name,
       berry: pokemon.berry,
       sleepType: pokemon.sleepType,
       mainSkill: pokemon.mainSkill,
-      image: getImageUrl(allPokemons.find(image => image.pokemonName === pokemon.name)),
-      berryImg: getImageUrl(allBerries.find(image => image.berryName === pokemon.berry))
+      image: getImageUrl(allPokemons.find((image) => image.pokemonName === pokemon.name)),
+      berryImg: getImageUrl(allBerries.find((image) => image.berryName === pokemon.berry))
     }));
 
     if (selectedBerries.length === 0 && selectedSleepTypes.length === 0) {
       newData = [];
     } else if (selectedBerries.length > 0 && selectedSleepTypes.length === 0) {
-      newData = pokemonData.filter(pm => selectedBerries.includes(pm.berry));
+      newData = pokemonData.filter((pm) => selectedBerries.includes(pm.berry));
     } else if (selectedBerries.length === 0 && selectedSleepTypes.length > 0) {
-      newData = pokemonData.filter(pm => selectedSleepTypes.includes(pm.sleepType));
+      newData = pokemonData.filter((pm) => selectedSleepTypes.includes(pm.sleepType));
     } else {
-      newData = pokemonData.filter(pm =>
+      newData = pokemonData.filter((pm) =>
         selectedBerries.includes(pm.berry) && selectedSleepTypes.includes(pm.sleepType)
       );
     }
@@ -167,7 +167,7 @@ export function Form(props) {
 
     firebaseSet(newPokemonRef, newPokemonData)
       .then(() => console.log("data saved successfully!"))
-      .catch(err => console.log(err)); //log any errors for debugging
+      .catch((err) => console.log(err)); //log any errors for debugging
   };
 
   return (

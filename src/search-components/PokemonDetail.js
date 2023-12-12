@@ -36,12 +36,12 @@ export default function PokemonDetail(props) {
     useEffect(() => {
         const fetchData = async () => {
             const pokemonImgData = await listFilesAndUrls('img/Pokemons');
-            const pokemonImagesArray = pokemonImgData.map(image => ({
+            const pokemonImagesArray = pokemonImgData.map((image) => ({
                 pokemonName: image.name.slice(0, -4),
                 source: image.url
             }));
             const berriesImgData = await listFilesAndUrls('img/Berries');
-            const berriesImagesArray = berriesImgData.map(image => ({
+            const berriesImagesArray = berriesImgData.map((image) => ({
                 berryName: image.name.slice(0, -4),
                 berryNameDash: image.name.slice(0, -4).replace(/\s+/g, '-').toLowerCase(),
                 source: image.url
@@ -59,13 +59,13 @@ export default function PokemonDetail(props) {
 
     const getImageUrl = (data) => data?.source || '';
 
-    const pokemonData = allPokemonDB.map(pokemon => ({
+    const pokemonData = allPokemonDB.map((pokemon) => ({
         name: pokemon.name,
         berry: pokemon.berry,
         sleepType: pokemon.sleepType,
         mainSkill: pokemon.mainSkill,
-        image: getImageUrl(allPokemons.find(image => image.pokemonName === pokemon.name)),
-        berryImg: getImageUrl(allBerries.find(image => image.berryName === pokemon.berry))
+        image: getImageUrl(allPokemons.find((image) => image.pokemonName === pokemon.name)),
+        berryImg: getImageUrl(allBerries.find((image) => image.berryName === pokemon.berry))
     }));
 
     let pokemon = _.find(pokemonData, { name: pNameString });

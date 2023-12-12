@@ -6,12 +6,12 @@ export function FilterBar({ berries, types, applyFilterCallback }) {
 
     const handleBerryChange = (event) => {
         const { name, checked } = event.target;
-        setFilterBerry(prev => {
+        setFilterBerry((prev) => {
             if (checked) {
                 return [...prev, { name, checked }];
             }
             else {
-                return prev.filter(berry =>
+                return prev.filter((berry) =>
                     berry.name !== name);
             }
         });
@@ -19,12 +19,12 @@ export function FilterBar({ berries, types, applyFilterCallback }) {
 
     const handleTypeChange = (event) => {
         const { id, checked } = event.target;
-        setFilterType(prev => {
+        setFilterType((prev) => {
             if (checked) {
                 return [...prev, { id, checked }];
             }
             else {
-                return prev.filter(type =>
+                return prev.filter((type) =>
                     type.id !== id);
             }
         });
