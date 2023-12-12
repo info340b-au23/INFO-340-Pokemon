@@ -20,10 +20,10 @@ export function Navbar(props) {
                 </button>
             </div>
             <div className={`navItems ${isOpen ? 'open' : ''}`}>
-                <div class="navItem">
+                <div className="navItem">
                     <NavLink to={"/searching"}>Searching</NavLink>
                 </div>
-                <div class="navItem">
+                <div className="navItem">
                     <NavLink to={"/cooking"}>Cooking</NavLink>
                 </div>
             </div>

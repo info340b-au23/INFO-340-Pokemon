@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 import BerriesSection from './BerriesSection';
 import SleepTypesSection from './SleepTypesSection';
-import { saveAs } from 'file-saver';
 import { NavLink } from 'react-router-dom';
 
 export function Form(props) {
@@ -61,28 +60,21 @@ export function Form(props) {
       <div className="form-card" key={oneCard.name}>
         <img src={oneCard.image} alt={oneCard.name} />
         <p>{oneCard.name}</p>
-        <button className="add-button">
+        <button className="add-button" onClick={(event) => handleAddPokemon(event, oneCard)}>
           Add
         </button>
       </div>
     )
   })
 
-  const handleAddPokemon = () => {
-    const pokemonData = {
-      name: 'Eevee',
-      berries: selectedBerries,
-      sleepTypes: selectedSleepTypes,
-    };
-
-
-    const jsonString = JSON.stringify(pokemonData, null, 2);
-    const blob = new Blob([jsonString], { type: 'application/json' });
-    saveAs(blob, 'Pokemon.json');
-
-
-    setSelectedBerries([]);
-    setSelectedSleepTypes([]);
+  const handleAddPokemon = (event, oneCard) => {
+    event.preventDefault();
+    let currentPokemon = props.addedPokemon;
+    if (currentPokemon.includes(oneCard)) {
+      return;
+    }
+    let newPokemon = [...currentPokemon, oneCard];
+    props.setAddedPokemon(newPokemon);
   };
 
   return (

@@ -21,8 +21,7 @@ function App(props) {
         return (
             <div className="collection-card" key={oneP.name}>
                 <img src={oneP.image} alt={oneP.name}></img>
-                {/* <p>{oneP.name}</p> */}
-                <NavLink to={`/pokemon/${oneP.name}`} className="cardText">{oneP.name}</NavLink>
+                <NavLink to={`/collection/${oneP.name}`} className="cardText">{oneP.name}</NavLink>
             </div>
         )
     })
@@ -36,13 +35,12 @@ function App(props) {
                 <H1 isOpen={isOpen} />
             </header>
             <main>
-                <section class="button-container">
+                <section className="button-container">
                     <h2>Click the button below to navigate to the pop-up form</h2>
-                    {/* <a href="form.html" class="button-nav">Add Pokémon</a> */}
                     <NavLink to={"/form"} className="linkButton">Add Pokémon</NavLink>
                 </section>
 
-                <div class="collection-cards-container">
+                <div className="collection-cards-container">
                     {card}
                 </div>
             </main>

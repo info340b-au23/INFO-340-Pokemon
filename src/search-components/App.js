@@ -9,13 +9,15 @@ import berry from './../data/berry.json'
 import PokemonDetail from './PokemonDetail';
 
 export default function App(props) {
+    const [addedPokemon, setAddedPokemon] = React.useState([]);
     return (
         <Routes>
             <Route path="searching" element={<Searching pokemon={pokemon} />} />
             <Route path='pokemon/:pName' element={<PokemonDetail />} />
-            <Route path="collection" element={<Collection pokemon={pokemon} />} />
+            <Route path="collection" element={<Collection pokemon={addedPokemon} />} />
+            <Route path='collection/:pName' element={<PokemonDetail />} />
             <Route path="cooking" element={<Cooking />} />
-            <Route path='form' element={<Form pokemon={pokemon} berries={berry} />} />
+            <Route path='form' element={<Form pokemon={pokemon} berries={berry} addedPokemon={addedPokemon} setAddedPokemon={setAddedPokemon}/>} />
             <Route path="*" element={<Navigate to="/searching" replace />} />
         </Routes>
     )
